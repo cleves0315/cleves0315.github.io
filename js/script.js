@@ -1,6 +1,6 @@
 window.onload = function() {
-    var btn = getElementById("btn");
-    btn.onclick = starA();
+    var btn = document.getElementById("btn");
+    btn.onclick = starA;
 }
 
 function starA() {
@@ -12,4 +12,5 @@ function starA() {
     };
     xhttp.open("GET", "/js/123.txt", true);
     xhttp.send();
+    
 }
