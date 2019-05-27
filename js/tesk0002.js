@@ -531,7 +531,7 @@ window.onload = function() {
     });
     addEvent(btn, "click", function() {
         t = txt.value;
-        ajax(js_hobby.txt, {
+        ajax("js_hobby.txt", {
             data: t,
             onsuccess: function() {
                 htxt.innerHTML = this.responseText;
