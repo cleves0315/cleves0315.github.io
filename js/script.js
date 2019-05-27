@@ -8,6 +8,8 @@ function starA() {
     xhttp.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
             document.getElementById("do").innerHTML = this.responseText;
+        } else {
+            console.log(this);
         }
     };
     xhttp.open("GET", "/js/123.txt", true);
