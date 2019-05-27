@@ -531,11 +531,14 @@ window.onload = function() {
     });
     addEvent(btn, "click", function() {
         t = txt.value;
-        ajax("js_hobby.txt", {
-            data: t,
-            onsuccess: function() {
-                htxt.innerHTML = this.responseText;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                htxt.innerHTML = t;
             }
-        });
+        }
+        xhttp.open("POST", js_hobby.txt, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(t);
     });
 }
