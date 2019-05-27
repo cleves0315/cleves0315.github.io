@@ -537,7 +537,7 @@ window.onload = function() {
                 htxt.innerHTML = t;
             }
         }
-        xhttp.open("POST", js_hobby.txt, true);
+        xhttp.open("POST", "js_hobby.txt", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(t);
     });
