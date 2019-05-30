@@ -2,7 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8">
-        <title>task0002_1</title>
+        <title>task0002_4</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -20,15 +20,18 @@
         </header>
         <div class="main">
             <div class="main-wrap">
-                <h2 class="main-title">小练习1</h2>
-                <textarea class="hobby-text" placeholder="在此输入你的兴趣爱好"></textarea>
-                <button type="button" class="btn" onclick="showHobby()">提交</button>
-                <button type="button" class="btn" onclick="reset()">重置</button>
-                <div class="exhibit"></div>
-            </div>            
+                <h2 class="main-title">小练习4</h2>
+                <input class="search-text" type="text" placeholder="请输入[a-z]字母">
+                <ul class="search-list" style="display: none;">
+                    <li index="0" onmousedown="update()"></li>
+                    <li index="1" onmousedown="update()"></li>
+                    <li index="2" onmousedown="update()"></li>
+                    <li index="3" onmousedown="update()"></li>
+                </ul>
+            </div>
         </div>
         
-        <script src="js/task0002_1.js"></script>
+        <script src="js/task0002_4.js"></script>
         <script src="js/util.js"></script>
     </body>
 </html>

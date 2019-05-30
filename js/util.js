@@ -97,29 +97,28 @@ srcObj.b.b1[0] = "Hello";
 
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
-    var leng = arr.length,
-        resule = arr.slice(0),
-        i,m;
-    // while(--leng) {
-    //     for(var i=0;i<leng;i++) {
-    //         if(typeof arr[i] == "string" ||typeof arr[i] == "number" ||typeof arr[leng] == "string" ||typeof arr[leng] == "number") {
-    //             if(arr[i] === arr[leng]){
-    //                 arr.splice(leng,1)
-    //             }
+    var len = arr.length;
+        // resule = arr.slice(0);
+    // while(--leng) {    //从尾到头比较，相同数值进行删除后者
+    //     m = resule[leng],
+    //     i = leng;
+    //     while(i--) {
+    //         if(resule[i] === m) {
+    //             resule.splice(leng,1);
+    //             break;
     //         }
     //     }
     // }
-    while(--leng) {
-        m = resule[leng]
-        i = leng;
-        while(i--) {
-            if(resule[i] === m) {
-                resule.splice(leng,1);
-                break;
+    // return resule;
+    for (var i = 0; i < len; i++) {
+        for (var j = i + 1; j < len; j++) {
+            if (arr[i] == arr[j]) {
+                arr.splice(j, 1);    //删除重复元素
+                j--;    //删除后数组位置发生变化
             }
         }
-    }
-    return resule;
+        return arr;
+    }    
 }
 
 //使用示例
@@ -272,17 +271,29 @@ function getPosition(element) {
 // 实现一个简单的Query
 function $(selector) {
     var seles = selector.trim().replace(/\s/," ").split(" ");    //去除首位空白符， 压缩多余空白符， 字符串分组
-    var len = seles.length;
+    var len = seles.length,
+        tags,
         eles = [];    //存放查找结果的合集
     
     for(var i = 0;i < len; i++) {    //对分组的字符串遍历筛选查到对应对象
         var n = seles[i];
-        switch(n.charAt(0)) {    //为对应的关键字符，用对应的方式查找
-            case "$":    //以id查找
+        switch(n.charAt(0)) {    //查找首字符
+            case "#":    //以id查找
                 eles.push(document.getElementById(n.substring(1)));
             break;
             case ".":
-                eles.push(document.getElementsByClassName(n.substring(1)));
+                // eles.push(document.getElementsByClassName(n.substring(1)));
+                tags = document.getElementsByTagName("*");
+                for (var i = 0; i < tags.length; i++) {
+                    if (tags[i].className === n.substring(1)) {    //向所有标签对应类名
+                        if (!eles[0]) {
+                            eles.push(tags[i]);
+                        } else if (eles[0][className] === n.substring) {
+                            eles.push(tags[i]);
+                        }
+                        break;
+                    }
+                }
             break;
             case "[":
                 //分两种情况1.有属性值  2.只有属性名
@@ -314,6 +325,8 @@ function $(selector) {
     }
     if(eles.length < 1) {    //没有找到则返回null
         return null;
+    } else if (eles.length == 1) {
+        return eles[0];
     } else {
         return eles;
     }
@@ -511,34 +524,3 @@ function ajax(url, options) {
 //         }
 //     }
 // );
-
-// =============================================================================
-window.onload = function() {
-    var txt = document.getElementById("txt"),
-        btn = document.getElementById("btn"),
-        htxt = document.getElementsByClassName("hobby_txt")[0],
-        t;
-    
-    addEvent(txt, "focus", function() {   //焦点
-        if (txt.value == "请输入你的爱好,请用 ，分开") {
-            txt.value = "";
-        }
-    });
-    addEvent(txt, "blur", function() {
-        if (!txt.value) {
-            txt.value = "请输入你的爱好,请用 ，分开"
-        }
-    });
-    addEvent(btn, "click", function() {
-        t = txt.value;
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                htxt.innerHTML = this.responseText;
-            }
-        }
-        xhttp.open("POST", "js_hobby.txt", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(t);
-    });
-}
