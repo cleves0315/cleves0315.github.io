@@ -1,4 +1,4 @@
-##supermall
+##supermall##
 一个vue框架开发的小项目
 首页展示商品信息
 添加购物车的功能
