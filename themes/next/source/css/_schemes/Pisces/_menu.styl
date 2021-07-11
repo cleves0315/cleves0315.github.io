@@ -1,5 +1,11 @@
 .site-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
   border-top: none;
+  z-index: 1;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  background: linear-gradient(rgba(0,0,0,0.3), transparent);
 
   +tablet() {
     display: none !important;
@@ -12,22 +18,37 @@
   }
 }
 
+.menu {
+  display: flex;
+  align-items: stretch;
+  width: 960px;
+  height: 62px;
+  margin: 0 auto;
+}
+
 .menu .menu-item {
   display: block;
   margin: 0;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
 
   a {
+    display: flex;
+    align-items: center;
+    height: 100%;
     position: relative;
     box-sizing: border-box;
     padding: 5px 20px;
+    color: #fff;
     text-align: left;
+    font-size: 15px;
     line-height: inherit;
     transition-property: background-color;
     the-transition();
 
     &:hover {
-      background: #f9f9f9;
-      border-bottom-color: white;
+      background: rgba(0,0,0,0.18);
+      border-bottom: 0;
     }
   }
 

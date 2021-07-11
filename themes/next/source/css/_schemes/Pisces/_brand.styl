@@ -16,10 +16,38 @@
 }
 
 .brand {
+  position: absolute;
+  top: 170px;
+  right: 0;
+  left: 0;
   padding: 0;
   background: none;
 
   &:hover { color: white; }
+
+  .site-title {
+    width: 100%;
+    font-size: 88px;
+    text-align: center;
+
+    span {
+      position: absolute;
+      opacity: 0;
+    }
+
+    svg {
+      fill: #FF9800;
+      overflow: visible;
+      text-shadow: none;
+      height: 1px;
+    }
+
+    use {
+      stroke: #fff;
+      stroke-width: 13px;
+      stroke-linejoin: round;
+    }
+  }
 }
 
 .site-subtitle {

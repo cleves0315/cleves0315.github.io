@@ -811,5 +811,7 @@ css: css
 js: js
 images: images
 
+header_site_brand: /images/site-brand.jpg
+
 # Theme version
 version: 5.1.4
