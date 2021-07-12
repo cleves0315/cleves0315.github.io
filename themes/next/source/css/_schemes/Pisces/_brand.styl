@@ -17,7 +17,7 @@
 
 .brand {
   position: absolute;
-  top: 170px;
+  top: 260px;
   right: 0;
   left: 0;
   padding: 0;
@@ -27,26 +27,12 @@
 
   .site-title {
     width: 100%;
-    font-size: 88px;
+    font-size: 100px;
     text-align: center;
-
-    span {
-      position: absolute;
-      opacity: 0;
-    }
-
-    svg {
-      fill: #FF9800;
-      overflow: visible;
-      text-shadow: none;
-      height: 1px;
-    }
-
-    use {
-      stroke: #fff;
-      stroke-width: 13px;
-      stroke-linejoin: round;
-    }
+    color: #00c3ff;
+    user-select: none;
+    font-family: $font-family-title;
+    text-shadow: 5px 0px 0px #fff, -5px 0px 0 #fff, 0px 5px 0 #fff, 0px -5px 0 #fff;
   }
 }
 

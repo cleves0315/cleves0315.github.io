@@ -43,13 +43,7 @@
   <img class="site-brand-back-img" loading="lazy" src="{{ url_for( theme.header_site_brand ) }}" />
   <div class="brand">
     <div class="site-title">
-      {% for letter in config.title %}
-        <span>
-          <svg>
-            <text id="stroke{{ letter }}">{{ letter }}</text>
-          </svg>
-        </span>
-      {% endfor %}
+      {{ config.title }}
     </div>
   </div>
 </div>

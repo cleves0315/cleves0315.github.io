@@ -336,6 +336,10 @@ font:
     family:
     size:
 
+  title:
+    external: true
+    family: Candyshop
+
 
 # ---------------------------------------------------------------
 # Third Party Services Settings
