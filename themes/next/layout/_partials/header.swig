@@ -43,7 +43,12 @@
   <img class="site-brand-back-img" loading="lazy" src="{{ url_for( theme.header_site_brand ) }}" />
   <div class="brand">
     <div class="site-title">
-      {{ config.title }}
+      <span>{{ config.title }}</span>
+    </div>
+  </div>
+  <div class="site-master">
+    <div class="site-master-frame">
+      <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
     </div>
   </div>
 </div>

@@ -1,5 +1,7 @@
 .site-brand-wrapper {
   position: relative;
+  height: 650px;
+  overflow: hidden;
 }
 
 .site-meta {
@@ -27,12 +29,37 @@
 
   .site-title {
     width: 100%;
+    line-height: 1;
     font-size: 100px;
     text-align: center;
     color: #00c3ff;
     user-select: none;
     font-family: $font-family-title;
     text-shadow: 5px 0px 0px #fff, -5px 0px 0 #fff, 0px 5px 0 #fff, 0px -5px 0 #fff;
+  }
+}
+
+.site-master {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  .site-master-frame {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    // background: rgba(0, 195, 255, .6);
+    .site-master-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 2px dashed #00c3ff;
+      padding: 5px;
+      transition: transform .4s;
+      &:hover {
+        transform: scale(1.1, 1.1);
+      }
+    }
   }
 }
 
