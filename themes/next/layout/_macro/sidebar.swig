@@ -163,7 +163,7 @@
 
       {% if theme.sidebar.b2t %}
         <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
+          <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
           {% if theme.sidebar.scrollpercent %}
             <span id="scrollpercent"><span>0</span>%</span>
           {% endif %}

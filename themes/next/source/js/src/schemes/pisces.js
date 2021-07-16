@@ -11,17 +11,13 @@ $(document).ready(function () {
         sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight(),
         contentHeight = $('#content').height();
 
-    // Not affix if sidebar taller then content (to prevent bottom jumping).
-    if (headerOffset + sidebarHeight < contentHeight) {
-      sidebarInner.affix({
-        offset: {
-          top: headerOffset - CONFIG.sidebar.offset,
-          bottom: footerOffset
-        }
-      });
-    }
+    sidebarInner.affix({
+      offset: {
+        top: headerOffset
+      }
+    });
 
-    setSidebarMarginTop(headerOffset).css({ 'margin-left': 'initial' });
+    $('#sidebar').css({ 'margin-left': 'initial' });
   }
 
   function resizeListener () {
@@ -42,10 +38,6 @@ $(document).ready(function () {
         footerMargin = footerInner.outerHeight(true) - footerInner.outerHeight(),
         footerOffset = footerInner.outerHeight(true) + footerMargin;
     return footerOffset;
-  }
-
-  function setSidebarMarginTop (headerOffset) {
-    return $('#sidebar').css({ 'margin-top': headerOffset });
   }
 
   function recalculateAffixPosition () {
