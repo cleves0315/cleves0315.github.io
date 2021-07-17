@@ -30,7 +30,7 @@ $(document).ready(function () {
   }
 
   function getHeaderOffset () {
-    return $('.header-inner').height() + CONFIG.sidebar.offset;
+    return $('#header').innerHeight() - CONFIG.sidebar.offset;
   }
 
   function getFooterOffset () {
@@ -45,5 +45,4 @@ $(document).ready(function () {
     sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
   }
-
 });

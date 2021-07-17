@@ -95,11 +95,11 @@ NexT.utils = NexT.$u = {
   },
 
   registerBackToTop: function () {
-    var THRESHOLD = 50;
     var $top = $('.back-to-top');
+    var $header = $('#header');
 
     $(window).on('scroll', function () {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
+      $top.toggleClass('back-to-top-on', window.pageYOffset > $header.height());
 
       var scrollTop = $(window).scrollTop();
       var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
