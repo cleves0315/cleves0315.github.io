@@ -56,6 +56,8 @@
       </div>
     {% endif %}
 
+    <canvas id="backlife"></canvas>
+
     {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
       <div id="needsharebutton-float">
         <span class="btn">

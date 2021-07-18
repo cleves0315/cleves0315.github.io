@@ -64,7 +64,7 @@
   background: white;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
-  border-radius: $border-radius-inner;
+  border-radius: $border-radius;
 
   +tablet() {
     width: 100%;
@@ -96,6 +96,15 @@
 }
 
 .sidebar-toggle { display: none; }
+
+#backlife {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 
 .footer-inner {

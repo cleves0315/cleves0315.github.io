@@ -40,7 +40,7 @@
 </nav>
 
 <div class="site-brand-wrapper">
-  <video id="site-brand-back" class="site-brand-back-img" autoplay muted loop src="{{ url_for( theme.header_site_brand ) }}"></video>
+  <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
   <div class="brand">
     <div class="site-title">
       <span>{{ config.title }}</span>

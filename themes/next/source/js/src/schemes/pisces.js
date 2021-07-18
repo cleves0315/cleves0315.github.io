@@ -1,15 +1,13 @@
 $(document).ready(function () {
 
   var sidebarInner = $('.sidebar-inner');
+  var backlife = $('#backlife')[0];
 
   initAffix();
   resizeListener();
 
   function initAffix () {
-    var headerOffset = getHeaderOffset(),
-        footerOffset = getFooterOffset(),
-        sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight(),
-        contentHeight = $('#content').height();
+    var headerOffset = getHeaderOffset();
 
     sidebarInner.affix({
       offset: {
@@ -44,5 +42,9 @@ $(document).ready(function () {
     $(window).off('.affix');
     sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
     initAffix();
+  }
+
+  function getBacklife () {
+    return $('#backlife')[0]
   }
 });
