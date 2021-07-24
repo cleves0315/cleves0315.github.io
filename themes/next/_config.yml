@@ -815,7 +815,8 @@ css: css
 js: js
 images: images
 
-header_site_brand: /images/youname.png
+header_site_brand: /images/shenli.webp
+# header_site_brand: /images/youname.png
 # header_site_brand: /images/could.mp4
 # header_site_brand: /images/site-brand.jpg
 

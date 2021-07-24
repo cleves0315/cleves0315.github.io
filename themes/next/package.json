@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "gulp"
+    "watch": "cross-env NODE_ENV=production webpack --watch --progress",
+    "build": "cross-env NODE_ENV=production webpack --progress"
   },
   "repository": {
     "type": "git",
@@ -28,12 +29,15 @@
   "homepage": "https://theme-next.iissnan.com",
   "devDependencies": {
     "coffee-script": "^1.10.0",
+    "cross-env": "^7.0.3",
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.12.0",
     "gulp-shell": "^0.6.1",
     "js-yaml": "^3.8.1",
     "jshint-stylish": "^2.1.0",
-    "stylint": "^1.5.9"
+    "stylint": "^1.5.9",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2"
   },
   "dependencies": {
     "jquery-pjax": "^2.0.1"
