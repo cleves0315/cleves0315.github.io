@@ -738,7 +738,7 @@ vendors:
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
   fancybox:
-  fancybox_css:
+  fancybox_css: https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
@@ -807,6 +807,7 @@ vendors:
   # needMoreShare2
   # https://github.com/revir/need-more-share2
   needMoreShare2:
+
 
 
 
