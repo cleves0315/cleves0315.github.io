@@ -70,7 +70,6 @@
 
   <script type="text/javascript" src="{{ url_for(theme.js) }}/main.min.js"></script>
 
-  {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
 
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
