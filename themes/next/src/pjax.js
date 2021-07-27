@@ -11,6 +11,8 @@ $(document).pjax('a:not(.fancybox):not([target="_blank"])', '#main', {
 });
 
 $(document).on('pjax:start', function () {
+  NexT.utils.removeActiveClassToMenuItem();
+  NexT.utils.addActiveClassToMenuItem();
   NProgress.start();
   $('html, body').animate({
     scrollTop: $('.main').position().top - 60
@@ -32,6 +34,8 @@ $(document).on('pjax:start', function () {
 
 $(document).on('pjax:end', function () {
   NProgress.done();
+
+  window.PrePath = location.pathname;
 
   $('.site-overview, .post-toc').css('max-height', document.body.clientHeight - 164);
 });

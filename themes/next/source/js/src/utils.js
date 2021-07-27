@@ -204,6 +204,10 @@ NexT.utils = NexT.$u = {
     $('.menu-item a[href^="' + path + '"]:first').parent().addClass('menu-item-active');
   },
 
+  removeActiveClassToMenuItem: function () {
+    $('.menu-item a[href^="' + window.PrePath + '"]:first').parent().removeClass('menu-item-active');
+  },
+
   hasMobileUA: function () {
     var nav = window.navigator;
     var ua = nav.userAgent;

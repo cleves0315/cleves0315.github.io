@@ -1,7 +1,8 @@
 require('./pjax')
 
-$(document).ready(function () {
+window.PrePath = location.pathname;
 
+$(document).ready(function () {
   var sidebarInner = $('.sidebar-inner');
   var backlife = $('#backlife')[0];
 
