@@ -758,6 +758,9 @@ vendors:
 
   pjax: https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js
 
+  nprogress: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js
+  nprogress_css: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css
+
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
   ua_parser:

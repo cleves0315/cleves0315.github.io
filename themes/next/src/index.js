@@ -1,8 +1,5 @@
-$(document).pjax('a:not(.fancybox):not([target="_blank"])', '#main', {
-  scrollTo: $('.main').position().top - 60,
-  fragment: '#main',
-  timeout: 5000,
-});
+require('./pjax')
+
 $(document).ready(function () {
 
   var sidebarInner = $('.sidebar-inner');

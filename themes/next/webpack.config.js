@@ -1,20 +1,8 @@
-const fs = require('fs')
 const path = require('path')
-
-// 获取third-party目录文件集合
-const getTrhidPartys = function (dir) {
-  const files = fs.readdirSync(dir)
-  const thirdPartys = []
-  for (const filName of files) {
-    thirdPartys.push(`${dir}/${filName}`)
-  }
-
-  return thirdPartys
-}
 
 module.exports = {
   entry: {
-    'pisces': './src/main.js',
+    'pisces': './src/index.js',
   },
 
   bail: true,
