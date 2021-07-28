@@ -37,6 +37,6 @@ $(document).on('pjax:end', function () {
 
   window.PrePath = location.pathname;
 
-  $('.site-overview, .post-toc').css('max-height', document.body.clientHeight - 164);
+  Affix.initSideBar();
 });
 

@@ -1,25 +1,13 @@
-require('./pjax')
+require('./affix');
+require('./pjax');
 
 window.PrePath = location.pathname;
 
 $(document).ready(function () {
   var sidebarInner = $('.sidebar-inner');
-  var backlife = $('#backlife')[0];
 
-  initAffix();
+  Affix.initSideBar();
   resizeListener();
-
-  function initAffix () {
-    var headerOffset = getHeaderOffset();
-
-    sidebarInner.affix({
-      offset: {
-        top: headerOffset
-      }
-    });
-
-    $('#sidebar').css({ 'margin-left': 'initial' });
-  }
 
   function resizeListener () {
     var mql = window.matchMedia('(min-width: 991px)');
@@ -28,10 +16,6 @@ $(document).ready(function () {
         recalculateAffixPosition();
       }
     });
-  }
-
-  function getHeaderOffset () {
-    return $('#header').innerHeight() - CONFIG.sidebar.offset;
   }
 
   function getFooterOffset () {
