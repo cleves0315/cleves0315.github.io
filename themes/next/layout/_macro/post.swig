@@ -17,6 +17,11 @@
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
+    <div class="post-time-label">
+      <div class="m">{{ date(post.date, 'MM') }}月</div>
+      <div class="d">{{ date(post.date, 'DD') }}</div>
+    </div>
+
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ theme.author }}">
       <meta itemprop="description" content="{{ theme.signature }}">
