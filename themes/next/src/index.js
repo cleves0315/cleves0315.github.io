@@ -1,5 +1,6 @@
 require('./affix');
 require('./pjax');
+require('./evanyou');
 
 window.PrePath = location.pathname;
 
