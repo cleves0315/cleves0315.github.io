@@ -1,6 +1,6 @@
 require('./affix');
 require('./pjax');
-require('./evanyou'); // 加载evanyou
+require('./evanyou');
 
 window.PrePath = location.pathname;
 
