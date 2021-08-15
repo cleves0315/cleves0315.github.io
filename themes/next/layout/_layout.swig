@@ -21,50 +21,83 @@
 
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
+      <div class="header-wrapper">
+        <div class="header-inner">
+          {%  if theme.scheme === 'Pisces' %}
+            <div class="logo-wrapper">
+              <div class="logo-inner">
+                <img src="{{ url_for( theme.avatar ) }}" alt="avatar" />
+              </div>
+              <div class="name">{{ config.author }}</div>
+            </div>
+          {% endif %}
+          {%- include '_partials/header.swig' %}
+        </div>
+      </div>
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            {% block content %}{% endblock %}
+    <div class="main-container">
+      <main id="main" class="main">
+        <div class="main-inner">
+
+          {% if theme.scheme === 'Pisces' %}
+            <div class="site-brand-wrapper">
+              <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
+              <div class="brand">
+                <div class="site-title">
+                  <span>{{ config.title }}</span>
+                </div>
+              </div>
+              <div class="site-master">
+                <div class="site-master-frame">
+                  <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="content-wrap">
+            <div id="content" class="content">
+              {% block content %}{% endblock %}
+            </div>
+            {% include '_third-party/duoshuo-hot-articles.swig' %}
+            {% include '_partials/comments.swig' %}
           </div>
-          {% include '_third-party/duoshuo-hot-articles.swig' %}
-          {% include '_partials/comments.swig' %}
+
+          {% if theme.sidebar.display !== 'remove' %}
+            {% block sidebar %}{% endblock %}
+          {% endif %}
         </div>
-        {% if theme.sidebar.display !== 'remove' %}
-          {% block sidebar %}{% endblock %}
-        {% endif %}
-      </div>
-    </main>
+      </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        {% include '_partials/footer.swig' %}
-        {% include '_third-party/analytics/analytics-with-widget.swig' %}
-        {% block footer %}{% endblock %}
-      </div>
-    </footer>
+      <footer id="footer" class="footer">
+        <div class="footer-inner">
+          {% include '_partials/footer.swig' %}
+          {% include '_third-party/analytics/analytics-with-widget.swig' %}
+          {% block footer %}{% endblock %}
+        </div>
+      </footer>
 
-    {% if not theme.sidebar.b2t %}
-      <div class="back-to-top">
-        <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
-        {% if theme.sidebar.scrollpercent %}
-          <span id="scrollpercent"><span>0</span>%</span>
-        {% endif %}
-      </div>
-    {% endif %}
+      {% if not theme.sidebar.b2t %}
+        <div class="back-to-top">
+          <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
+          {% if theme.sidebar.scrollpercent %}
+            <span id="scrollpercent"><span>0</span>%</span>
+          {% endif %}
+        </div>
+      {% endif %}
 
-    <canvas id="evanyou"></canvas>
-
-    {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    {% endif %}
+      {% if evanyou %}
+        <canvas id="evanyou"></canvas>
+      {% endif %}
+      {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
+        <div id="needsharebutton-float">
+          <span class="btn">
+            <i class="fa fa-share-alt" aria-hidden="true"></i>
+          </span>
+        </div>
+      {% endif %}
+    </div>
 
   </div>
 

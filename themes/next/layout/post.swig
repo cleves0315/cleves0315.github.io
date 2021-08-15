@@ -9,7 +9,6 @@
 
 
 {% block content %}
-
   <div id="posts" class="posts-expand">
     {{ post_template.render(page) }}
 
