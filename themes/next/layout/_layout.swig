@@ -38,24 +38,22 @@
 
     <div class="main-container">
       <main id="main" class="main">
-        <div class="main-inner">
-
-          {% if theme.scheme === 'Pisces' %}
-            <div class="site-brand-wrapper">
-              <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
-              <div class="brand">
-                <div class="site-title">
-                  <span>{{ config.title }}</span>
-                </div>
-              </div>
-              <div class="site-master">
-                <div class="site-master-frame">
-                  <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
-                </div>
+        {% if theme.scheme === 'Pisces' %}
+          <div class="site-brand-wrapper">
+            <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
+            <div class="brand">
+              <div class="site-title">
+                <span>{{ config.title }}</span>
               </div>
             </div>
-          {% endif %}
-
+            <div class="site-master">
+              <div class="site-master-frame">
+                <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <div class="main-inner">
           <div class="content-wrap">
             <div id="content" class="content">
               {% block content %}{% endblock %}
@@ -70,13 +68,15 @@
         </div>
       </main>
 
-      <footer id="footer" class="footer">
-        <div class="footer-inner">
-          {% include '_partials/footer.swig' %}
-          {% include '_third-party/analytics/analytics-with-widget.swig' %}
-          {% block footer %}{% endblock %}
-        </div>
-      </footer>
+      {% if theme.scheme !== 'Pisces' %}
+        <footer id="footer" class="footer">
+          <div class="footer-inner">
+            {% include '_partials/footer.swig' %}
+            {% include '_third-party/analytics/analytics-with-widget.swig' %}
+            {% block footer %}{% endblock %}
+          </div>
+        </footer>
+      {% endif %}
 
       {% if not theme.sidebar.b2t %}
         <div class="back-to-top">

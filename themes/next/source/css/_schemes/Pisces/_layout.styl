@@ -37,10 +37,10 @@
       .name {
         font-size: 52px;
         font-weight: 100;
-        color: #15c5ce;
+        color: #00c3ff;
         text-transform: capitalize;
         font-family: $font-family-title;
-        text-shadow: 2px 0px 0px #fff, -2px 0px 0 #fff, 0px 2px 0 #fff, 0px -2px 0 #fff;
+        text-shadow: 4px 0px 0px #fff, -4px 0px 0 #fff, 0px 4px 0 #fff, 0px -4px 0 #fff;
       }
     }
 
@@ -76,6 +76,9 @@
 }
 
 .main {
+  width: 990px;
+  padding: 0;
+  margin: 0;
   clearfix();
   +tablet() {
     padding-bottom: 100px;
@@ -89,6 +92,7 @@
   width: auto;
   margin: 0;
   padding: 0;
+  padding-top: 20px;
 
   +tablet() {
     width: auto;
@@ -103,6 +107,7 @@
   box-sizing: border-box;
   width: $content-desktop;
   min-height: 700px;
+  margin-left: 15px;
   box-shadow: $box-shadow-inner;
 
   +tablet() {
