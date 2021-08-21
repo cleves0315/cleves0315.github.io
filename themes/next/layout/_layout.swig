@@ -25,9 +25,6 @@
         <div class="header-inner">
           {%  if theme.scheme === 'Pisces' %}
             <div class="logo-wrapper">
-              <div class="logo-inner">
-                <img src="{{ url_for( theme.avatar ) }}" alt="avatar" />
-              </div>
               <div class="name">{{ config.author }}</div>
             </div>
           {% endif %}

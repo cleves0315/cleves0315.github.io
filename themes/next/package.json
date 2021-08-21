@@ -8,7 +8,8 @@
   },
   "scripts": {
     "watch": "cross-env NODE_ENV=production webpack --watch --progress",
-    "build": "cross-env NODE_ENV=production webpack --progress"
+    "build": "cross-env NODE_ENV=production webpack --progress",
+    "translate": "hexo migrate wordpress ./source/_posts/"
   },
   "repository": {
     "type": "git",
