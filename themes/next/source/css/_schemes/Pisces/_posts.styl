@@ -9,13 +9,54 @@
   box-shadow: $post-block-shadow;
 }
 
+.post-meta {
+  .post-wordcount {
+    color: #27ae60;
+    &:before {
+      content: '·';
+      color: #27ae60;
+      font-weight: 700;
+      margin: 0 5px;
+    }
+  }
+  .leancloud_visitors {
+    color: #ff3f1a;
+    &:before {
+      content: '·';
+      color: #ff3f1a;
+      font-weight: 700;
+      margin: 0 5px;
+    }
+  }
+}
+
 .posts-expand {
   padding-top: 0;
+  .post-title-link {
+    transition: transform .4s;
+    &:hover {
+      transform: scale(1.12);
+    }
+  }
 }
 
 .post-body {
   +mobile() {
     text-align: justify;
+  }
+
+  .post-button .btn {
+    background: #97dffd;
+    color: #fff;
+    font-size: 13px;
+    padding: 1px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: .3s ease;
+
+    &:hover {
+      transform: scale(1.1)
+    }
   }
 }
 

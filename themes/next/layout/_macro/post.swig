@@ -105,30 +105,14 @@
           {% endif %}
         </span>
 
-        {% if post.categories and post.categories.length and theme.post_meta.categories %}
-          <span class="post-category" >
-          {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
-            <span class="post-meta-divider">|</span>
-          {% endif %}
+        {% if theme.scheme !== 'Pisces' %}
+          <span class="post-info">
             <span class="post-meta-item-icon">
-              <i class="fa fa-folder-o"></i>
+              <i class="fa fa-calendar-o"></i>
             </span>
-            {% if theme.post_meta.item_text %}
-              <span class="post-meta-item-text">{{ __('post.in') }}</span>
-            {% endif %}
-            {% for cat in post.categories %}
-              <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
-                  <span itemprop="name">{{ cat.name }}</span>
-                </a>
-              </span>
-
-              {% set cat_length = post.categories.length %}
-              {% if cat_length > 1 and loop.index !== cat_length %}
-                {{ __('symbol.comma') }}
-              {% endif %}
-            {% endfor %}
-          </span>
+            <span>字数统计</span>
+            <span>{{ post.content.length }}</span>
+          <span>
         {% endif %}
 
         {% if post.comments %}
@@ -213,20 +197,6 @@
           {% endif %}
         {% endif %}
 
-        {# LeanCould PageView #}
-        {% if theme.leancloud_visitors.enable %}
-            <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
-              {% endif %}
-                <span class="leancloud-visitors-count"></span>
-            </span>
-        {% endif %}
-
         {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
           <span class="post-meta-divider">|</span>
           <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
@@ -235,7 +205,7 @@
         {% endif %}
 
         {% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %}
-          <div class="post-wordcount">
+          <span class="post-wordcount">
             {% if theme.post_wordcount.wordcount %}
               {% if not theme.post_wordcount.separated_meta %}
                 <span class="post-meta-divider">|</span>
@@ -266,7 +236,21 @@
                 {{ min2read(post.content) }}
               </span>
             {% endif %}
-          </div>
+          </span>
+        {% endif %}
+
+        {# LeanCould PageView #}
+        {% if theme.leancloud_visitors.enable %}
+          <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
+            {% if theme.post_meta.item_text %}
+              <span class="post-meta-item-text">被</span>
+            {% endif %}
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
         {% endif %}
 
         {% if post.description and (not theme.excerpt_description or not is_index) %}
@@ -338,6 +322,7 @@
           <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
         {% else %}
           {{ post.content }}
+
         {% endif %}
       {% endif %}
     {% else %}
