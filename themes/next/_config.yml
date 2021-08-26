@@ -365,9 +365,11 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: Cleves
   count: true
+  api: https://disqus.com/api/3.0/threads/list.json
+  apikey: 9GqZRKU96EOZpjP0fqw0aneQ8AKmbHqgPuC5a0POrKjxvAjWAeyTaFquI3YTSQ3a
 
 # Hypercomments
 #hypercomments_id:
