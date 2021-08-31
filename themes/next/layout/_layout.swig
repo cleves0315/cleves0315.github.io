@@ -51,7 +51,7 @@
           </div>
         {% endif %}
         <div class="main-inner">
-          <div class="content-wrap">
+          <div id="content-wrap" class="content-wrap">
             <div id="content" class="content">
               {% block content %}{% endblock %}
             </div>

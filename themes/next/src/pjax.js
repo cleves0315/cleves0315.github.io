@@ -11,7 +11,6 @@ $(document).pjax('a:not(.fancybox):not([target="_blank"])', '#main', {
 });
 
 $(document).on('pjax:start', function () {
-  console.log('发生变化：', location.pathname)
   NexT.utils.removeActiveClassToMenuItem();
   NexT.utils.addActiveClassToMenuItem();
   NProgress.start();
@@ -37,6 +36,11 @@ $(document).on('pjax:end', function () {
   NProgress.done();
 
   window.PrePath = location.pathname;
+  if (location.pathname === '/') {
+    $('#content-wrap').addClass('home-content-wrap')
+  } else {
+    $('#content-wrap').removeClass('home-content-wrap')
+  }
 
   Affix.initSideBar();
 });
