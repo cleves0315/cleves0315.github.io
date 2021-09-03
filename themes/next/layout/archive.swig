@@ -14,7 +14,11 @@
   <div class="post-block archive">
     <div id="posts" class="posts-collapse">
       <span class="archive-move-on"></span>
-
+      <h1 class="page-archive-title">归档</h1>
+      <div class="category-wrap">
+        <h2>分类</h2>
+        {{ list_categories() }}
+      </div>
       <span class="archive-page-counter">
         {% set cheers %}
         {% set posts_length = site.posts.length %}
