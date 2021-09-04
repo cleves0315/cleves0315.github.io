@@ -123,11 +123,11 @@
 }
 
 .post-time {
-  color: #3498db;
+  color: $theme-blue;
 }
 
 .archive {
-  padding: 20px;
+  padding: 28px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
@@ -137,16 +137,20 @@
   }
 
   .page-archive-title {
+    font-size: 30px;
     text-align: center;
   }
 
   .category-wrap {
-
+    .page-archive-sub-title {
+      font-size: 24px;
+    }
     .category-list {
       display: flex;
-      padding: 0;
+      padding: 0 20px;
       &-item {
-        color: #00c3ff;
+        list-style: none;
+        color: $theme-blue;
         font-size: 16px;
         font-weight: 700;
         margin-right: 20px;
@@ -154,8 +158,34 @@
         .category-list-link {
           color: inherit;
         }
+        .category-list-count {
+          color: $grey;
+          &:before {
+            display: inline;
+            content: " ("
+          }
+          &:after {
+            display: inline;
+            content: ") "
+          }
+        }
       }
     }
   }
 
+  .collection-title {
+    margin: 30px 0;
+  }
+
+  .post {
+    padding: 0;
+    box-shadow: none;
+    .post-header {
+      border-bottom: none;
+      .post-title {
+        font-size: 14px;
+        margin-left: 65px;
+      }
+    }
+  }
 }

@@ -27,7 +27,7 @@
       .name {
         font-size: 52px;
         font-weight: 100;
-        color: #00c3ff;
+        color: $theme-blue;
         text-transform: capitalize;
         font-family: $font-family-title;
         text-shadow: 4px 0px 0px #fff, -4px 0px 0 #fff, 0px 4px 0 #fff, 0px -4px 0 #fff;
@@ -95,7 +95,7 @@
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  width: $content-desktop;
+  width: 685px;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
 
@@ -113,6 +113,7 @@
 }
 
 .home-content-wrap {
+  width: 650px;
   margin-left: 35px;
 }
 
@@ -180,4 +181,12 @@
   top: 0;
   z-index: -1;
   background: #efefef;
+}
+
+.scaleup {
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

@@ -13,25 +13,11 @@
   {#####################}
   <div class="post-block archive">
     <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
       <h1 class="page-archive-title">归档</h1>
       <div class="category-wrap">
-        <h2>分类</h2>
+        <h2 class="page-archive-sub-title">分类</h2>
         {{ list_categories() }}
       </div>
-      <span class="archive-page-counter">
-        {% set cheers %}
-        {% set posts_length = site.posts.length %}
-        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
-          {% elif posts_length > 130 %} {% set cheers = 'great' %}
-          {% elif posts_length > 80 %} {% set cheers = 'good' %}
-          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
-          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
-        {% else %}
-          {% set cheers = 'um' %}
-        {% endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
-      </span>
 
       {% for post in page.posts %}
 
