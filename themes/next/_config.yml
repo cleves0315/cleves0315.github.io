@@ -157,6 +157,7 @@ links_layout: block
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 avatar: /images/avatar.png
+card_avatar: https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/card-avatar2.jpeg
 
 # Table Of Contents in the Sidebar
 toc:

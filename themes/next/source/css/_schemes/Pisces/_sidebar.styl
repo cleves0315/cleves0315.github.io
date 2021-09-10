@@ -17,6 +17,7 @@
   width: $sidebar-desktop;
   color: $text-color;
   background: white;
+  overflow: hidden;
   box-shadow: $post-block-shadow;
   border-radius: $border-radius;
 
@@ -85,11 +86,12 @@
   justify-content: center;
 }
 .links-of-author-item {
-  sidebar-inline-links-item();
-
   a {
     display: block;
+    line-height: 1;
     text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
 
     &:hover {
       border-radius: 4px;
