@@ -29,10 +29,12 @@
       <section class="site-overview-wrap sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            {% if theme.avatar %}
-              <img class="site-author-image" itemprop="image"
-                src="{{ url_for( theme.card_avatar) }}"
-                alt="{{ theme.author }}" />
+            {% if theme.card_avatar %}
+              <div class="site-author-image-wrap">
+                <img class="site-author-image" itemprop="image"
+                  src="{{ url_for( theme.card_avatar) }}"
+                  alt="{{ theme.author }}" />
+              </div>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
               <p class="site-description motion-element" itemprop="description">{#
@@ -44,7 +46,7 @@
             #}</p>
           </div>
 
-          <div class="site-state-title">抓到我</div>
+          <div class="site-state-title">能抓到我吗？</div>
 
           {#
 

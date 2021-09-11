@@ -1,11 +1,20 @@
-.site-author-image {
-  display: block;
+.site-author-image-wrap {
+  overflow: hidden;
   box-sizing: border-box;
-  transition: transform .3s;
   padding: $site-author-image-padding;
   height: $site-author-image-height;
-  border-radius: $site-author-border-radius $site-author-border-radius 0 0;
+  border-top-left-radius: $site-author-border-radius;
+  border-top-right-radius: $site-author-border-radius;
   border: $site-author-image-border-width solid $site-author-image-border-color;
+}
+
+.site-author-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform .3s ease;
+  border-top-left-radius: $site-author-border-radius;
+  border-top-right-radius: $site-author-border-radius;
 
   &:hover {
     transform: scale(1.1);
