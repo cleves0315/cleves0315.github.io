@@ -10,7 +10,7 @@
             {% if theme.menu_icons.enable %}
               <i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />
             {% endif %}
-            {{ __('menu.' + name) | replace('menu.', '') }}
+            <span class="menu-item-name">{{ __('menu.' + name) | replace('menu.', '') }}</span>
           </a>
         </li>
       {% endfor %}
