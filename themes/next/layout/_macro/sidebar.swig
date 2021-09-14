@@ -46,7 +46,7 @@
             #}</p>
           </div>
 
-          <div class="site-state-title">能抓到我吗？</div>
+          <div class="site-state-title">你能抓到我吗？</div>
 
           {#
 
