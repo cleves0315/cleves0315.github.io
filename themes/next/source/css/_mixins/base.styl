@@ -16,17 +16,17 @@ the-transition-ease-out() {
   transition-delay: 0s;
 }
 
-mobile-smallest() {
-  @media (max-width: 413px) {
-    {block}
-  }
-}
+// mobile-smallest() {
+//   @media (max-width: 413px) {
+//     {block}
+//   }
+// }
 
-mobile-small() {
-  @media (max-width: 567px) {
-    {block}
-  }
-}
+// mobile-small() {
+//   @media (max-width: 567px) {
+//     {block}
+//   }
+// }
 
 mobile() {
   @media (max-width: 549px) {
@@ -34,8 +34,14 @@ mobile() {
   }
 }
 
+tablet-small() {
+  @media (min-width: 550px) and (max-width: 819px) {
+    {block}
+  }
+}
+
 tablet() {
-  @media (min-width: 550px) and (max-width: 1119px) {
+  @media (min-width: 820px) and (max-width: 1119px) {
     {block}
   }
 }

@@ -7,6 +7,12 @@
 .menu {
   margin: 0;
   padding: 0;
+  +mobile() {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    background: #fff;
+  }
 }
 
 .menu .menu-item {
@@ -31,6 +37,19 @@
     text-align: center;
     border-radius: 50%;
   }
+  +tablet-small() {
+    width: 54px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+  }
+  +mobile() {
+    flex: 1;
+    width: 54px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+  }
 
   &:hover {
     background: #E7E7E8;
@@ -49,6 +68,12 @@
         display: none;
       }
       +tablet() {
+        display: none;
+      }
+      +tablet-small() {
+        display: none;
+      }
+      +mobile() {
         display: none;
       }
     }
