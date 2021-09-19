@@ -87,6 +87,12 @@ random-color($min, $max) {
   return floor(math(0, 'random') * ($max - $min + 1) + $min);
 }
 
+stretch() {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 // Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
 clearfix() {
   &:before,

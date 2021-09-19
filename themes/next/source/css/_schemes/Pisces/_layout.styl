@@ -9,6 +9,13 @@
   align-items: flex-end;
   flex-direction: column;
 
+  +tablet-small() {
+    flex-grow: 0;
+  }
+  +mobile() {
+    flex-grow: 0;
+  }
+
   .header-wrapper {
     width: 260px;
     position: relative;
@@ -69,6 +76,15 @@
 .main-container {
   position: relative;
   flex-grow: 1;
+
+  +tablet-small() {
+    width: unset;
+    stretch();
+  }
+  +mobile() {
+    width: unset;
+    stretch();
+  }
 }
 
 .main {
@@ -81,10 +97,12 @@
     width: auto;
   }
   +tablet-small() {
-    width: auto;
+    width: unset;
+    stretch();
   }
   +mobile() {
-    width: auto;
+    width: unset;
+    stretch();
   }
 }
 
@@ -93,6 +111,14 @@
   margin: 0;
   padding: 0;
   padding-top: 60px;
+  +tablet-small() {
+    width: unset;
+    stretch();
+  }
+  +mobile() {
+    width: unset;
+    stretch();
+  }
 }
 
 .content-wrap {
@@ -101,21 +127,40 @@
   width: 710px;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
+
+  +tablet-small() {
+    width: unset;
+    stretch();
+  }
+  +mobile() {
+    width: unset;
+    stretch();
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 20px;
+  }
+
+  .content {
+    +tablet-small() {
+      width: unset;
+      stretch();
+    }
+    +mobile() {
+      width: unset;
+      stretch();
+    }
+  }
 }
 
 .home-content-wrap {
-  width: 675px;
-  margin-left: 35px;
-
-  +tablet-small() {
-    width: auto;
-    margin-left: 0;
-    padding: 0 20px;
+  +desktop-large() {
+    width: 675px;
+    margin-left: 35px;
   }
-  +mobile() {
-    width: auto;
-    margin-left: 0;
-    padding: 0 20px;
+  +desktop() {
+    width: 675px;
+    margin-left: 35px;
   }
 }
 
