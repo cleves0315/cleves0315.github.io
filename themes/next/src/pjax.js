@@ -34,6 +34,7 @@ $(document).on('pjax:start', function () {
 
 $(document).on('pjax:end', function () {
   NProgress.done();
+  require('./post-details')();
 
   if (location.pathname === '/') {
     $('#content-wrap').addClass('home-content-wrap')

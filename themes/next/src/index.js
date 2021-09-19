@@ -1,6 +1,8 @@
 require('./affix');
 require('./pjax');
 require('./evanyou');
+require('./scrollspy');
+require('./post-details')();
 
 window.PrePath = location.pathname;
 

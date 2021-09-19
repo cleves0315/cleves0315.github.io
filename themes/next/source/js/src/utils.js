@@ -55,7 +55,7 @@ NexT.utils = NexT.$u = {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
     $(function() {
       $(window).bind('hashchange', function() {
-        var tHash = location.hash;
+        var tHash = decodeURIComponent(location.hash);
         if (tHash !== '') {
           $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
