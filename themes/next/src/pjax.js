@@ -35,7 +35,6 @@ $(document).on('pjax:start', function () {
 $(document).on('pjax:end', function () {
   NProgress.done();
 
-  window.PrePath = location.pathname;
   if (location.pathname === '/') {
     $('#content-wrap').addClass('home-content-wrap')
   } else {

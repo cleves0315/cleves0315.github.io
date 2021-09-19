@@ -205,6 +205,8 @@ NexT.utils = NexT.$u = {
     path = path === '/' ? path : (
       path.includes(archives) ? path.substring(0, archives.length - 1) : path.substring(0, path.length - 1)
     );
+
+    window.PrePath = path;
     $('.menu-item a[href^="' + path + '"]:first').parent().addClass('menu-item-active');
   },
 
@@ -328,9 +330,9 @@ $(document).ready(function () {
 
     // Initialize Sidebar & TOC Width.
     var scrollbarWidth = NexT.utils.getScrollbarWidth();
-      // if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      //   $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
-      // }
+      if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
+        $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
+      }
       if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
         $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
       }
