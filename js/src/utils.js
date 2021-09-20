@@ -55,7 +55,7 @@ NexT.utils = NexT.$u = {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
     $(function() {
       $(window).bind('hashchange', function() {
-        var tHash = location.hash;
+        var tHash = decodeURIComponent(location.hash);
         if (tHash !== '') {
           $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
           $(tHash).addClass('active').siblings().removeClass('active');
@@ -199,8 +199,14 @@ NexT.utils = NexT.$u = {
    * via comparing location.path with menu item's href.
    */
   addActiveClassToMenuItem: function () {
+    var archives = '/archives/';
     var path = window.location.pathname;
-    path = path === '/' ? path : path.substring(0, path.length - 1);
+
+    path = path === '/' ? path : (
+      path.includes(archives) ? path.substring(0, archives.length - 1) : path.substring(0, path.length - 1)
+    );
+
+    window.PrePath = path;
     $('.menu-item a[href^="' + path + '"]:first').parent().addClass('menu-item-active');
   },
 

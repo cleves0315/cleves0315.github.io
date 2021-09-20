@@ -83,9 +83,9 @@
 
 <meta name="description" content="cleves的个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hi, Celves">
+<meta property="og:title" content="Hi, Cleves">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hi, Celves">
+<meta property="og:site_name" content="Hi, Cleves">
 <meta property="og:description" content="cleves的个人博客">
 <meta property="og:locale">
 <meta property="article:author" content="cleves">
@@ -99,7 +99,7 @@
     root: '',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":52,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":60,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -169,7 +169,7 @@
 
 
 
-  <title>Hi, Celves</title>
+  <title>Hi, Cleves</title>
   
 
 
@@ -191,7 +191,13 @@
   <div class="container sidebar-position-right 
   page-home">
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><nav class="site-nav">
+      <div class="header-wrapper">
+        <div class="header-inner">
+          
+            <div class="logo-wrapper">
+              <div class="name">cleves</div>
+            </div>
+          <nav class="site-nav">
   
 
   
@@ -203,17 +209,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            <span class="menu-item-name">首页</span>
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+        <li class="menu-item menu-item-laboratory">
+          <a href="/laboratory" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br />
             
-            分类
+            <span class="menu-item-name">实验室</span>
           </a>
         </li>
       
@@ -223,7 +229,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            <span class="menu-item-name">归档</span>
           </a>
         </li>
       
@@ -233,7 +239,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于我
+            <span class="menu-item-name">关于我</span>
           </a>
         </li>
       
@@ -245,31 +251,36 @@
   
 </nav>
 
-<div class="site-brand-wrapper">
-  <img class="site-brand-back-img" src="/images/shenli.webp" />
-  <div class="brand">
-    <div class="site-title">
-      <span>Hi, Celves</span>
-    </div>
-  </div>
-  <div class="site-master">
-    <div class="site-master-frame">
-      <img class="site-master-img" src="/images/avatar.png" />
-    </div>
-  </div>
-</div>
 
 
 
 
- </div>
+
+        </div>
+      </div>
     </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+    <div class="main-container">
+      <main id="main" class="main">
+        
+          <div class="site-brand-wrapper">
+            <img class="site-brand-back-img" src="/images/shenli.webp" />
+            <div class="brand">
+              <div class="site-title">
+                <span>Hi, Cleves</span>
+              </div>
+            </div>
+            <div class="site-master">
+              <div class="site-master-frame">
+                <img class="site-master-img" src="/images/avatar.png" />
+              </div>
+            </div>
+          </div>
+        
+        <div class="main-inner">
+          <div id="content-wrap" class="content-wrap">
+            <div id="content" class="content">
+              
   <section id="posts" class="posts-expand">
     
       
@@ -284,119 +295,170 @@
   
   
   
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/12/hello-world/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/archives/2/">
 
-    <div class="post-time-label">
-      <div class="m">08月</div>
-      <div class="d">12</div>
-    </div>
+  <div class="post-time-label">
+    <div class="m">09月</div>
+    <div class="d">08</div>
+  </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Celves">
-    </span>
-
+  <div class="post-badge">
     
-      <header class="post-header">
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index">
+          <span itemprop="name">分享</span>
+        </a>
+      </span>
+    
+  </div>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/08/12/hello-world/" itemprop="url">Hello World</a></h1>
-        
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
 
-        <div class="post-meta">
-          <span class="post-time">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hi, Cleves">
+  </span>
+
+  
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+              
+              <a class="post-title-link" href="/archives/2/" itemprop="url">慢慢的 就没有了 就像从未存在过</a></h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
             
+              <span class="post-meta-item-text">发表于</span>
+            
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-08T00:07:58+00:00">
+              2021-09-08
+            </time>
+          
+
+          
+
+          
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="fa fa-comment-o"></i>
+              </span>
+              <a href="/archives/2/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count"
+                      data-disqus-identifier="/archives/2/" itemprop="commentCount"></span>
+              </a>
+            </span>
+          
+        
+
+        
+
+        
+          <span class="post-wordcount">
+            
+              
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-12T15:38:05+00:00">
-                2021-08-12
-              </time>
+                <span class="post-meta-item-text">字数统计&#58;</span>
+              
+              <span title="字数统计">
+                2,528
+              </span>
             
 
             
 
             
           </span>
+        
 
-          
-
-          
+        
+        
+          <span id="/archives/2/" class="leancloud_visitors" data-flag-title="慢慢的 就没有了 就像从未存在过">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
             
-          
+              <span class="post-meta-item-text">被</span>
+            
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
+        
 
-          
-          
+        
 
-          
+      </div>
+    </header>
+  
 
-          
+  
+  
+  
+  <div class="post-body" itemprop="articleBody">
 
-          
+    
+    
 
+    
+      
+        <p><span style="font-size: 8pt;"><em>一盏一盏的灯，灭了。四面八方的光源，消失了。我们生活的五光十色的世界，变成了一片黑色。<br>天黑了，那么睡觉吧，但愿长醉不复醒，卧槽泥马勒戈壁。<br>最后，我们变成了一群做梦的人，这个梦的名字，叫根据相关法律法规，相关搜索结果不予显示梦。</em></span></p>
+<p>版权声明：转载自 <a target="_blank" rel="noopener" href="http://weibo.com/p/1001603781133723654255">《慢慢的 就没有了 就像从未存在过》</a></p>
+<p>作者: 小海</p>
+<p>几年以前，我曾经嘲笑过某科技界大佬。当时他说：也许90后、95后会慢慢不知道谷歌是什么网站。</p>
+<p>那一年，这对于我来说简直就是世界上最好笑的笑话。谷歌，全世界最卓越的互联网公司，活在互联网的一代中国人，会不知道他们的网站？</p>
+<p>今天，我收回这句嘲笑。因为这件不可能的事，它慢慢变成了现实。</p>
+<p>没有人再关注什么谷歌不谷歌。对他们来说，百度也蛮好用的，反正他们几乎没用过谷歌。没有谷歌又怎样？大家还是开心的刷微博，看微信，听歌，看娱乐节目。对于从来就不知道谷歌的人来说，少了谷歌又有什么影响？</p>
+<p>多年前，我们也是可以登陆Facebook的。其实这个网站和校内一样，也挺蠢的。可在上面你能看到老外们的生活，可以轻易的跟一万公里以外的人互相拜访，可以看到很多根本不会开到校内上的主页。你用汉语回复，下面给你聊起来的可能是香港仔，可能是台湾人。你用英语回复，说不定有比你英语用的更蹩脚的寂寞的北欧人来跟你搭讪。你感觉地球真的变成了地球村，你还没拉门走出去，别人就推门走了进来。</p>
+<p>然后，它就没有了。起初，它的失踪激起了很大的声音，后来，声音就消失了。
+        <!--noindex-->
+        <div class="post-button text-center">
+          <a class="btn" href="/archives/2/#more" rel="contents">
+            阅读全文 &raquo;
+          </a>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+        <!--/noindex-->
       
-      
-
-      
-        
-          
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-          
-        
-      
-    </div>
     
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-    </footer>
   </div>
+  
+  
+  
+
+  
+
+  
+
+  
+
+  <footer class="post-footer">
+    
+
+    
+
+    
+
+    
+  </footer>
   
   
   
@@ -416,127 +478,334 @@
   
   
   
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/04/hello-world-2/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/archives/8/">
 
-    <div class="post-time-label">
-      <div class="m">08月</div>
-      <div class="d">04</div>
-    </div>
+  <div class="post-time-label">
+    <div class="m">08月</div>
+    <div class="d">21</div>
+  </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Celves">
-    </span>
-
+  <div class="post-badge">
     
-      <header class="post-header">
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E4%B9%A6%E6%91%98/" itemprop="url" rel="index">
+          <span itemprop="name">书摘</span>
+        </a>
+      </span>
+    
+  </div>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/08/04/hello-world-2/" itemprop="url">世界，您好！</a></h1>
-        
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
 
-        <div class="post-meta">
-          <span class="post-time">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hi, Cleves">
+  </span>
+
+  
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+              
+              <a class="post-title-link" href="/archives/8/" itemprop="url">那个姐姐教我们的事</a></h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
             
+              <span class="post-meta-item-text">发表于</span>
+            
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-21T21:25:02+00:00">
+              2021-08-21
+            </time>
+          
+
+          
+
+          
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="fa fa-comment-o"></i>
+              </span>
+              <a href="/archives/8/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count"
+                      data-disqus-identifier="/archives/8/" itemprop="commentCount"></span>
+              </a>
+            </span>
+          
+        
+
+        
+
+        
+          <span class="post-wordcount">
+            
+              
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-04T22:26:15+00:00">
-                2021-08-04
-              </time>
+                <span class="post-meta-item-text">字数统计&#58;</span>
+              
+              <span title="字数统计">
+                2,641
+              </span>
             
 
             
 
             
           </span>
+        
+
+        
+        
+          <span id="/archives/8/" class="leancloud_visitors" data-flag-title="那个姐姐教我们的事">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
+            
+              <span class="post-meta-item-text">被</span>
+            
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
+        
+
+        
+
+      </div>
+    </header>
+  
+
+  
+  
+  
+  <div class="post-body" itemprop="articleBody">
+
+    
+    
+
+    
+      
+        <p>独立意味着，自己读书，自己工作，自己养活自己，自己对自己负责。一个人面对所有的孤独，一个人解决所有的问题，一个人承担所有的选择。
+        <!--noindex-->
+        <div class="post-button text-center">
+          <a class="btn" href="/archives/8/#more" rel="contents">
+            阅读全文 &raquo;
+          </a>
+        </div>
+        <!--/noindex-->
+      
+    
+  </div>
+  
+  
+  
+
+  
+
+  
+
+  
+
+  <footer class="post-footer">
+    
+
+    
+
+    
+
+    
+  </footer>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <link itemprop="mainEntityOfPage" href="http://example.com/archives/1/">
+
+  <div class="post-time-label">
+    <div class="m">08月</div>
+    <div class="d">04</div>
+  </div>
+
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%88%9B%E4%BD%9C/" itemprop="url" rel="index">
+          <span itemprop="name">创作</span>
+        </a>
+      </span>
+    
+  </div>
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hi, Cleves">
+  </span>
+
+  
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+              
+              <a class="post-title-link" href="/archives/1/" itemprop="url">世界，您好！</a></h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">发表于</span>
+            
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-04T22:26:15+00:00">
+              2021-08-04
+            </time>
+          
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/uncategorized/" itemprop="url" rel="index">
-                    <span itemprop="name">uncategorized</span>
-                  </a>
-                </span>
 
-                
-                
-              
+          
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              <a href="/archives/1/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count"
+                      data-disqus-identifier="/archives/1/" itemprop="commentCount"></span>
+              </a>
             </span>
           
+        
 
-          
+        
+
+        
+          <span class="post-wordcount">
             
-          
+              
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">字数统计&#58;</span>
+              
+              <span title="字数统计">
+                27
+              </span>
+            
 
-          
-          
+            
 
-          
+            
+          </span>
+        
 
-          
+        
+        
+          <span id="/archives/1/" class="leancloud_visitors" data-flag-title="世界，您好！">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
+            
+              <span class="post-meta-item-text">被</span>
+            
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
+        
 
-          
+        
 
-        </div>
-      </header>
+      </div>
+    </header>
+  
+
+  
+  
+  
+  <div class="post-body" itemprop="articleBody">
+
+    
     
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
       
         
-          
-            <p>欢迎使用WordPress。这是您的第一篇文章。编辑或删除它，然后开始写作吧！</p>
+          <p>欢迎使用WordPress。这是您的第一篇文章。编辑或删除它，然后开始写作吧！</p>
 
-          
+
         
       
-    </div>
     
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-    </footer>
   </div>
+  
+  
+  
+
+  
+
+  
+
+  
+
+  <footer class="post-footer">
+    
+
+    
+
+    
+
+    
+  </footer>
   
   
   
@@ -549,15 +818,16 @@
   
 
 
+            </div>
+            
+
+
+            
+
           </div>
-          
-
 
           
-
-        </div>
-        
-          
+            
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -579,102 +849,95 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="" />
+              <div class="site-author-image-wrap">
+                <img class="site-author-image" itemprop="image"
+                  src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/card-avatar2.jpeg"
+                  alt="" />
+              </div>
             
               <p class="site-author-name" itemprop="name"></p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          <nav class="site-state motion-element">
+          <div class="site-state-title">你能抓到我吗？</div>
 
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-
-          </nav>
+          
 
           
 
           
             <div class="links-of-author motion-element">
+              <span class="links-of-author-item">
+                <a>
+                  <svg t="1631295695346" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1637" width="30" height="30"><path d="M777.514667 131.669333a53.333333 53.333333 0 0 1 0 75.434667L728.746667 255.829333h49.92A160 160 0 0 1 938.666667 415.872v320a160 160 0 0 1-160 160H245.333333A160 160 0 0 1 85.333333 735.872v-320a160 160 0 0 1 160-160h49.749334L246.4 207.146667a53.333333 53.333333 0 1 1 75.392-75.434667l113.152 113.152c3.370667 3.370667 6.186667 7.04 8.448 10.965333h137.088c2.261333-3.925333 5.12-7.68 8.490667-11.008l113.109333-113.152a53.333333 53.333333 0 0 1 75.434667 0z m1.152 231.253334H245.333333a53.333333 53.333333 0 0 0-53.205333 49.365333l-0.128 4.010667v320c0 28.117333 21.76 51.157333 49.365333 53.162666l3.968 0.170667h533.333334a53.333333 53.333333 0 0 0 53.205333-49.365333l0.128-3.968v-320c0-29.44-23.893333-53.333333-53.333333-53.333334z m-426.666667 106.666666c29.44 0 53.333333 23.893333 53.333333 53.333334v53.333333a53.333333 53.333333 0 1 1-106.666666 0v-53.333333c0-29.44 23.893333-53.333333 53.333333-53.333334z m320 0c29.44 0 53.333333 23.893333 53.333333 53.333334v53.333333a53.333333 53.333333 0 1 1-106.666666 0v-53.333333c0-29.44 23.893333-53.333333 53.333333-53.333334z" p-id="1638" fill="#00c3ff"></path></svg>
+                </a>
+              </span>
+              <span class="links-of-author-item">
+                <a>
+                  <svg t="1631296975137" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2597" width="30" height="30"><path d="M295.2 338c120.2 61 221.7 57.4 221.7 57.4s-38.5-134.8 80.5-194.6 200.9 41 200.9 41 20.8-5.7 36.2-11.4c15.5-5.7 37.8-15.9 37.8-15.9l-36.7 65.8 56.5-6s-7 10.2-29.6 31-31.9 31.6-31.9 31.6 8.1 162.3-77 287.2C668.5 749 558.6 824 398.9 839.8c-159.7 15.8-263.7-49.2-263.7-49.2s69.8-4 114.3-21.1S358 707.4 358 707.4s-91-28.1-123.7-59.8c-32.7-31.6-40.8-50.4-40.8-50.4l89.8-1.2s-94.5-50.4-121.3-90.3-30.3-78.5-30.3-78.5l69.1 28s-57.4-78.4-65.6-139.4c-8.2-61 10.5-93.8 10.5-93.8s29.3 55 149.5 116z" fill="#00c3ff" p-id="2598"></path></svg>
+                </a>
+              </span>
+              <span class="links-of-author-item">
+                <a>
+                  <svg t="1631297025969" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3614" width="30" height="30"><path d="M512 42.666667A464.64 464.64 0 0 0 42.666667 502.186667 460.373333 460.373333 0 0 0 363.52 938.666667c23.466667 4.266667 32-9.813333 32-22.186667v-78.08c-130.56 27.733333-158.293333-61.44-158.293333-61.44a122.026667 122.026667 0 0 0-52.053334-67.413333c-42.666667-28.16 3.413333-27.733333 3.413334-27.733334a98.56 98.56 0 0 1 71.68 47.36 101.12 101.12 0 0 0 136.533333 37.973334 99.413333 99.413333 0 0 1 29.866667-61.44c-104.106667-11.52-213.333333-50.773333-213.333334-226.986667a177.066667 177.066667 0 0 1 47.36-124.16 161.28 161.28 0 0 1 4.693334-121.173333s39.68-12.373333 128 46.933333a455.68 455.68 0 0 1 234.666666 0c89.6-59.306667 128-46.933333 128-46.933333a161.28 161.28 0 0 1 4.693334 121.173333A177.066667 177.066667 0 0 1 810.666667 477.866667c0 176.64-110.08 215.466667-213.333334 226.986666a106.666667 106.666667 0 0 1 32 85.333334v125.866666c0 14.933333 8.533333 26.88 32 22.186667A460.8 460.8 0 0 0 981.333333 502.186667 464.64 464.64 0 0 0 512 42.666667" p-id="3615"></path></svg>
+                </a>
+              </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://github.com/cleves0315" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-globe"></i>GitHub</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="cleves0315@foxmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-globe"></i>E-Mail</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://plus.google.com/yourname" target="_blank" title="Google">
                       
                         <i class="fa fa-fw fa-globe"></i>Google</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
                       
                         <i class="fa fa-fw fa-globe"></i>Twitter</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
                       
                         <i class="fa fa-fw fa-globe"></i>FB Page</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://vk.com/yourname" target="_blank" title="VK Group">
                       
                         <i class="fa fa-fw fa-globe"></i>VK Group</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
                       
                         <i class="fa fa-fw fa-globe"></i>StackOverflow</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
                       
                         <i class="fa fa-fw fa-globe"></i>YouTube</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="https://instagram.com/yourname" target="_blank" title="Instagram">
                       
                         <i class="fa fa-fw fa-globe"></i>Instagram</a>
                   </span>
                 
-                  <span class="links-of-author-item">
+                  <span class="links-of-author-item" style="display: none;">
                     <a href="skype:yourname?call|chat" target="_blank" title="Skype">
                       
                         <i class="fa fa-fw fa-globe"></i>Skype</a>
@@ -699,16 +962,10 @@
       
 
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
+    
+      <footer id="footer" class="footer">
+        <div class="footer-inner">
+          <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -731,7 +988,7 @@
 
 
 
-        
+          
 
 
 
@@ -739,20 +996,29 @@
 
 
 
-        
-      </div>
-    </footer>
-
+          
+        </div>
+      </footer>
     
-      <div class="back-to-top">
-        <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
-        
-      </div>
-    
+  </aside>
 
-    <canvas id="evanyou"></canvas>
 
-    
+          
+        </div>
+      </main>
+
+      
+
+      
+        <div class="back-to-top">
+          <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
+          
+        </div>
+      
+
+      
+      
+    </div>
 
   </div>
 
@@ -789,6 +1055,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://Cleves.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -804,10 +1078,6 @@
 
 
 
-  
-
-
-
 
 
 
@@ -824,6 +1094,104 @@
 
 
   
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.3.1/av-min.js"></script>
+  <script>AV.initialize("5sTAnPxuLGAauoJb8i7oMRFf-9Nh9j0Va", "FfW13xNPVMHEfLmSQ9FNesFQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .then(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find()
+        .then(function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save()
+              .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              })
+              .then(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save()
+              .then(function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              })
+              .then(function(newcounter, error) {
+                console.log('Failed to create');
+              });
+          }
+        });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
