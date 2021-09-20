@@ -9,7 +9,6 @@
 
 
 {% block content %}
-
   <div id="posts" class="posts-expand">
     {{ post_template.render(page) }}
 
@@ -30,8 +29,4 @@
 
 {% block sidebar %}
   {{ sidebar_template.render(true) }}
-{% endblock %}
-
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
 {% endblock %}

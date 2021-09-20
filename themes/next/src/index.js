@@ -1,14 +1,23 @@
 require('./affix');
 require('./pjax');
-require('./evanyou'); // 加载evanyou
+require('./evanyou');
+require('./scrollspy');
+require('./post-details')();
 
 window.PrePath = location.pathname;
 
 $(document).ready(function () {
+  console.log('dom-ready')
   var sidebarInner = $('.sidebar-inner');
 
   Affix.initSideBar();
   resizeListener();
+
+  if (location.pathname === '/') {
+    $('#content-wrap').addClass('home-content-wrap')
+  } else {
+    $('#content-wrap').removeClass('home-content-wrap')
+  }
 
   function resizeListener () {
     var mql = window.matchMedia('(min-width: 991px)');
@@ -22,6 +31,6 @@ $(document).ready(function () {
   function recalculateAffixPosition () {
     $(window).off('.affix');
     sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
-    initAffix();
+    Affix.initSideBar();
   }
 });

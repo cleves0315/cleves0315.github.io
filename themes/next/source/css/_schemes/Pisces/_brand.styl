@@ -1,12 +1,25 @@
 .site-brand-wrapper {
   position: relative;
+  width: 100%;
   height: 650px;
   overflow: hidden;
   background: linear-gradient(-45deg, #CBDCF2, transparent);
 
+  +tablet() {
+    width: 710px;
+  }
+  +tablet-small() {
+    width: unset;
+    stretch();
+  }
+  +mobile() {
+    width: unset;
+    stretch();
+  }
+
   .site-brand-back-img {
     position: absolute;
-    width: 90%;
+    width: 100%;
     top: 50%;
     left: 0;
     right: 0;
@@ -18,13 +31,6 @@
   padding: 20px 0;
   color: white;
   background: $black-deep;
-
-  +tablet() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
-  +mobile() {
-    box-shadow: 0 0 16px rgba(0,0,0,0.5);
-  }
 }
 
 .brand {
@@ -42,7 +48,7 @@
     line-height: 1;
     font-size: 100px;
     text-align: center;
-    color: #00c3ff;
+    color: $theme-blue;
     user-select: none;
     font-family: $font-family-title;
     text-shadow: 5px 0px 0px #fff, -5px 0px 0 #fff, 0px 5px 0 #fff, 0px -5px 0 #fff;
@@ -63,7 +69,7 @@
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      border: 2px dashed #00c3ff;
+      border: 2px dashed $theme-blue;
       padding: 5px;
       transition: transform .4s;
       &:hover {

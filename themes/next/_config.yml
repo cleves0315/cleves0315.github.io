@@ -93,8 +93,9 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
+  laboratory: /laboratory || flask
   # tags: /tags
-  categories: /categories
+  # categories: /categories
   archives: /archives/ || archive
   about: /about/ || user
   # schedule: /schedule/ || calendar
@@ -156,6 +157,7 @@ links_layout: block
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 avatar: /images/avatar.png
+card_avatar: https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/card-avatar2.jpeg
 
 # Table Of Contents in the Sidebar
 toc:
@@ -189,7 +191,7 @@ sidebar:
   #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-  offset: 52
+  offset: 60
 
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
@@ -222,7 +224,7 @@ auto_excerpt:
 
 # Post meta display settings
 post_meta:
-  item_text: false
+  item_text: true
   created_at: true
   updated_at: false
   categories: true
@@ -231,7 +233,7 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true
   min2read: false
   totalcount: false
   separated_meta: true
@@ -306,7 +308,7 @@ font:
 
   # Global font settings used on <body> element.
   global:
-    external: true
+    external: false
     family: Lato
     size:
 
@@ -365,9 +367,11 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: Cleves
   count: true
+  api: https://disqus.com/api/3.0/threads/list.json
+  apikey: 9GqZRKU96EOZpjP0fqw0aneQ8AKmbHqgPuC5a0POrKjxvAjWAeyTaFquI3YTSQ3a
 
 # Hypercomments
 #hypercomments_id:
@@ -536,9 +540,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: 5sTAnPxuLGAauoJb8i7oMRFf-9Nh9j0Va
+  app_key: FfW13xNPVMHEfLmSQ9FNesFQ
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId

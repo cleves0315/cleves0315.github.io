@@ -1,78 +1,166 @@
-.header {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 50px;
-  box-sizing: border-box;
+.container {
+  display: flex;
+  align-items: stretch;
+}
 
-  +tablet() {
-    width: auto;
+.header {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  +tablet-small() {
+    flex-grow: 0;
   }
   +mobile() {
-    width: auto;
+    flex-grow: 0;
+  }
+
+  .header-wrapper {
+    width: 260px;
+    position: relative;
+
+    +desktop() {
+      width: 88px;
+    }
+    +tablet() {
+      width: 88px;
+    }
+    +tablet-small() {
+      width: 68px;
+    }
+    +mobile() {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 50px;
+      z-index: 66;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      +mobile() {
+        display: none;
+      }
+
+      .name {
+        font-size: 52px;
+        font-weight: 100;
+        color: $theme-blue;
+        text-transform: capitalize;
+        font-family: $font-family-title;
+        text-shadow: 4px 0px 0px #fff, -4px 0px 0 #fff, 0px 4px 0 #fff, 0px -4px 0 #fff;
+      }
+    }
+
+    .header-inner {
+      position: fixed;
+      width: inherit;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      padding-right: 20px;
+      box-sizing: border-box;
+
+      +mobile() {
+        position: static;
+      }
+    }
   }
 }
 
-.header-inner {
-  padding: 0;
-  width: 100%;
-  background: white;
-  box-shadow: $box-shadow-inner;
-  border-radius: $border-radius-inner;
+.main-container {
+  position: relative;
+  flex-grow: 1;
 
-  +desktop-large() {
-    .container & { width: 240px; }
-  }
-  +tablet() {
-    position: relative;
-    width: auto;
-    border-radius: initial;
+  +tablet-small() {
+    width: unset;
+    stretch();
   }
   +mobile() {
-    position: relative;
-    width: auto;
-    border-radius: initial;
+    width: unset;
+    stretch();
   }
 }
 
 .main {
+  width: 1015px;
+  padding: 0;
+  margin: 0;
   clearfix();
+
   +tablet() {
-    padding-bottom: 100px;
+    width: auto;
+  }
+  +tablet-small() {
+    width: unset;
+    stretch();
   }
   +mobile() {
-    padding-bottom: 100px;
+    width: unset;
+    stretch();
   }
 }
 
 .container .main-inner {
-  width: $main-desktop;
-
-  +tablet() {
-    width: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+  +tablet-small() {
+    width: unset;
+    stretch();
   }
   +mobile() {
-    width: auto;
+    width: unset;
+    stretch();
   }
 }
 
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  width: $content-desktop;
+  width: 710px;
   min-height: 700px;
   box-shadow: $box-shadow-inner;
 
-  +tablet() {
-    width: 100%;
-    padding: 20px;
-    border-radius: initial;
+  +tablet-small() {
+    width: unset;
+    stretch();
   }
   +mobile() {
-    width: 100%;
-    padding: 20px;
-    min-height: auto;
-    border-radius: initial;
+    width: unset;
+    stretch();
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 20px;
+  }
+
+  .content {
+    +tablet-small() {
+      width: unset;
+      stretch();
+    }
+    +mobile() {
+      width: unset;
+      stretch();
+    }
+  }
+}
+
+.home-content-wrap {
+  +desktop-large() {
+    width: 675px;
+    margin-left: 35px;
+  }
+  +desktop() {
+    width: 675px;
+    margin-left: 35px;
   }
 }
 
@@ -85,6 +173,9 @@
   box-shadow: none;
 
   +tablet() {
+    display: none;
+  }
+  +tablet-small() {
     display: none;
   }
   +mobile() {
@@ -107,23 +198,11 @@
 .footer-inner {
   width: $main-desktop;
   padding-left: 260px;
-
-  +tablet() {
-    width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  +mobile() {
-    width: auto;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
 }
 
 
 
 .sidebar-position-right {
-  .header-inner { right: 0; }
   .content-wrap { float: left; }
   .sidebar { float: right; }
 
@@ -135,10 +214,17 @@
 
 #evanyou {
   position: fixed;
-  width: 100%;
+  width: 1037px;
   height: 100%;
   top: 0;
-  left: 0;
   z-index: -1;
   background: #efefef;
+}
+
+.scaleup {
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

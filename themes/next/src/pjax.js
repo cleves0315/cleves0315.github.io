@@ -34,9 +34,13 @@ $(document).on('pjax:start', function () {
 
 $(document).on('pjax:end', function () {
   NProgress.done();
+  require('./post-details')();
 
-  window.PrePath = location.pathname;
+  if (location.pathname === '/') {
+    $('#content-wrap').addClass('home-content-wrap')
+  } else {
+    $('#content-wrap').removeClass('home-content-wrap')
+  }
 
   Affix.initSideBar();
 });
-

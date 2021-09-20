@@ -17,6 +17,7 @@
   width: $sidebar-desktop;
   color: $text-color;
   background: white;
+  overflow: hidden;
   box-shadow: $post-block-shadow;
   border-radius: $border-radius;
 
@@ -85,15 +86,22 @@
   justify-content: center;
 }
 .links-of-author-item {
-  sidebar-inline-links-item();
-
+  margin-left: 10px;
+  &:nth-of-type(1) {
+    margin-left: 0;
+  }
   a {
     display: block;
+    line-height: 1;
     text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    // transition: transform .3s ease;
 
     &:hover {
       border-radius: 4px;
       background: $gainsboro;
+      // transform: translateY(-10%);
     }
   }
 

@@ -15,19 +15,11 @@
     border-bottom-color: $black-light;
     &:hover { color: $gainsboro; }
   }
-
-  +tablet() {
-    hide() if not hexo-config('sidebar.onmobile');
-  }
-  +mobile() {
-    hide() if not hexo-config('sidebar.onmobile');
-  }
-
 }
 
 .sidebar-inner {
   position: relative;
-  padding: 20px 10px;
+  padding: 0 0 20px;
   color: $grey-dark;
   text-align: center;
 }

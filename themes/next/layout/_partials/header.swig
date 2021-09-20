@@ -10,7 +10,7 @@
             {% if theme.menu_icons.enable %}
               <i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />
             {% endif %}
-            {{ __('menu.' + name) | replace('menu.', '') }}
+            <span class="menu-item-name">{{ __('menu.' + name) | replace('menu.', '') }}</span>
           </a>
         </li>
       {% endfor %}
@@ -39,19 +39,20 @@
   {% endif %}
 </nav>
 
-<div class="site-brand-wrapper">
-  <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
-  <div class="brand">
-    <div class="site-title">
-      <span>{{ config.title }}</span>
+{% if siteBrand %}
+  <div class="site-brand-wrapper">
+    <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
+    <div class="brand">
+      <div class="site-title">
+        <span>{{ config.title }}</span>
+      </div>
+    </div>
+    <div class="site-master">
+      <div class="site-master-frame">
+        <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
+      </div>
     </div>
   </div>
-  <div class="site-master">
-    <div class="site-master-frame">
-      <img class="site-master-img" src="{{ url_for( theme.avatar) }}" />
-    </div>
-  </div>
-</div>
-
+{% endif %}
 
 {% include '../_custom/header.swig' %}
