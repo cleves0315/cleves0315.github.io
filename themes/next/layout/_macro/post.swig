@@ -16,10 +16,12 @@
   {##################}
   <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
-  <div class="post-time-label">
-    <div class="m">{{ date(post.date, 'MM') }}月</div>
-    <div class="d">{{ date(post.date, 'DD') }}</div>
-  </div>
+  {#
+    <div class="post-time-label">
+      <div class="m">{{ date(post.date, 'MM') }}月</div>
+      <div class="d">{{ date(post.date, 'DD') }}</div>
+    </div>
+  #}
 
   <div class="post-badge">
     {% for cat in post.categories %}

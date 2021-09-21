@@ -1,12 +1,17 @@
 .post {
-  padding-top: 30px;
-  padding-left: 30px;
   position: relative;
-  padding: $post-block-padding;
+  padding-top: $post-block-top-btm-padding;
+  padding-right: $post-block-both-padding;
+  padding-bottom: $post-block-top-btm-padding;
+  padding-left: $post-block-both-padding;
   margin-bottom: $post-block-margin-Bottom;
   background: $post-bg-color;
   border-radius: $border-radius;
   box-shadow: $post-block-shadow;
+}
+
+.post-header {
+  margin-bottom: 10px;
 }
 
 .post-meta {
@@ -46,17 +51,11 @@
   }
 
   .post-button .btn {
-    background: #97dffd;
-    color: #fff;
-    font-size: 13px;
-    padding: 1px 15px;
-    border-radius: 5px;
+    width: 144px;
+    height: 44px;
     border: none;
-    transition: .3s ease;
-
-    &:hover {
-      transform: scale(1.1)
-    }
+    margin: 0 auto;
+    border-radius: 9999px;
   }
 }
 
@@ -97,31 +96,31 @@
 
 .post-badge {
   position: absolute;
-  left: -14px;
-  top: 104px;
+  top: 0;
+  left: 20px;
+  width: 50px;
+  height: 62px;
+  padding-top: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
   border-color: #47456d;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-  background-color: #97dffd;
-  margin: 5px 0 15px 2px;
+  background-color: $theme-blue;
   font-size: 14px;
   border-radius: 0 4px 4px 0;
   display: inline-block;
-  padding: 7px 11px 7px 32px;
   line-height: 1;
 
   &:after {
+    content: '';
     position: absolute;
-    content: "";
-    top: 100%;
+    bottom: 0;
     left: 0;
-    border-top: 0 solid transparent;
-    border-right-width: 1em;
-    border-right-color: inherit;
-    border-right-style: solid;
-    border-bottom: 1em solid transparent;
-    border-left: 0 solid transparent;
-    width: 0;
-    height: 0;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    transform: translateY(36px) rotate(45deg);
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,0.12) inset, 2px 2px 2px 0 rgba(0,0,0,0.14) inset, 3px 3px 1px -2px rgba(0,0,0,0.2) inset;
   }
 
   a {

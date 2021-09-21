@@ -35,7 +35,7 @@
 
     <div class="main-container">
       <main id="main" class="main">
-        {% if theme.scheme === 'Pisces' %}
+        {% if theme.scheme !== 'Pisces' %}
           <div class="site-brand-wrapper">
             <img class="site-brand-back-img" src="{{ url_for( theme.header_site_brand ) }}" />
             <div class="brand">

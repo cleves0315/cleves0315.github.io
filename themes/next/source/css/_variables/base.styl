@@ -17,13 +17,14 @@ $grey-dark    = #999
 $grey-dim     = #666
 $black-light  = #555
 $black-dim    = #333
-$black-deep   = #222
+$black-deep   = #2f3542
 $red          = #ff2a2a
 $blue-bright  = #87daff
 $blue         = #0684bd
 $blue-deep    = #262a30
 $orange       = #fc6423
-$theme-blue   = #00c3ff
+$theme-blue   = rgb(0,195,255)
+$theme-blue-light   = rgba(0,195,255, .75)
 
 
 
@@ -32,7 +33,7 @@ $theme-blue   = #00c3ff
 // --------------------------------------------------
 
 // Global text color on <body>
-$text-color                   = $black-light
+$text-color                   = $black-deep
 
 // Global link color.
 $link-color                   = $black-light
@@ -93,7 +94,7 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 14px
+$font-size-base           = 15px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
 $font-size-small          = $font-size-base - 2px
 $font-size-smaller        = $font-size-base - 4px
@@ -160,7 +161,7 @@ $code-background                = $gainsboro
 $btn-font-weight                = normal
 
 $btn-default-radius             = 0
-$btn-default-bg                 = $black-deep
+$btn-default-bg                 = #00c3ff
 $btn-default-color              = white
 $btn-default-font-size          = 14px
 $btn-default-border-width       = 2px
@@ -245,7 +246,6 @@ $menu-link-hover-border         = $black-deep
 
 // Posts Expand
 // --------------------------------------------------
-$posts-expand-title-font-weight = $font-weight-normal
 $post-copyright = {
   margin: 2em 0 0,
   padding: .5em 1em,
