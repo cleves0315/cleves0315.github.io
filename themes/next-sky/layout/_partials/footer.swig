@@ -27,7 +27,7 @@
 #}</div>
 {% endif %}
 
-{% if theme.footer.powered and theme.footer.theme.enable %}
+{% if not theme.footer.powered and theme.footer.theme.enable %}
   <span class="post-meta-divider">|</span>
 {% endif %}
 
@@ -35,7 +35,7 @@
   <div class="theme-info">{#
   #}{{ __('footer.theme') }} &mdash; {#
   #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
-    #}NexT.{{ theme.scheme }}{#
+    #}NexT.Sky{#
   #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
 #}</div>
 {% endif %}
