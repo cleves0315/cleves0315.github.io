@@ -1,11 +1,10 @@
 window.Affix = {
   initSideBar: function () {
     var sidebarInner = $('.sidebar-inner');
-    var headerOffset = $('#header').innerHeight() - CONFIG.sidebar.offset;
-
+    
     sidebarInner.affix({
       offset: {
-        top: headerOffset
+        top: 0
       }
     });
 

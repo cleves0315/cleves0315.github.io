@@ -184,6 +184,16 @@
       <!--/noindex-->
       {% endif %}
 
+      {% if theme.scheme === 'Pisces' %}
+        <footer id="footer" class="footer">
+          <div class="footer-inner">
+            {% include '../_partials/footer.swig' %}
+            {% include '../_third-party/analytics/analytics-with-widget.swig' %}
+            {% block footer %}{% endblock %}
+          </div>
+        </footer>
+      {% endif %}
+
       {% if theme.sidebar.b2t %}
         <div class="back-to-top">
           <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
@@ -194,14 +204,6 @@
       {% endif %}
 
     </div>
-    {% if theme.scheme === 'Pisces' %}
-      <footer id="footer" class="footer">
-        <div class="footer-inner">
-          {% include '../_partials/footer.swig' %}
-          {% include '../_third-party/analytics/analytics-with-widget.swig' %}
-          {% block footer %}{% endblock %}
-        </div>
-      </footer>
-    {% endif %}
+    
   </aside>
 {% endmacro %}
