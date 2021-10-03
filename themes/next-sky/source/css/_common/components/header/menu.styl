@@ -1,0 +1,24 @@
+// Menu
+// --------------------------------------------------
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.menu .menu-item {
+  display: inline-block;
+  list-style: none;
+
+  a {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: inherit;
+    transition-property: border-color;
+    the-transition();
+
+    &:hover { border-bottom-color: $menu-link-hover-border; }
+  }
+}
+
+// .use-motion .menu-item { opacity: 0; }
