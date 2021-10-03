@@ -1,7 +1,7 @@
 {%
   set scripts = [
     'src/affix.js',
-    'pisces.js'
+    'sky.js'
   ]
 %}
 

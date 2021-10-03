@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    'pisces': './src/index.js',
+    'sky': './src/index.js',
   },
 
   bail: true,
