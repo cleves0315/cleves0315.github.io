@@ -942,10 +942,11 @@ mobile-smallest()
 .pagination .page-number,
 .pagination .space {
   display: inline-block;
-  position: relative;
-  top: -1px;
+  width: 36px;
+  height: 36px;
   margin: 0 10px;
-  padding: 0 11px;
+  line-height: 36px;
+  border-radius: 6px;
 }
 @media (max-width: 549px) {
   .page-number-basic,
@@ -967,10 +968,9 @@ mobile-smallest()
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
 }
-.pagination .prev:hover,
-.pagination .next:hover,
-.pagination .page-number:hover {
-  border-top-color: #2f3542;
+.pagination a:hover {
+  color: #fff;
+  background: #00c3ff;
 }
 .pagination .space {
   padding: 0;
@@ -1778,7 +1778,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff0d;
+  background: #751b82;
 }
 .links-of-blogroll {
   font-size: 13px;
