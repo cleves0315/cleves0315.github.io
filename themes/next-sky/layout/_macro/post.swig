@@ -117,7 +117,7 @@
           <span>
         {% endif %}
 
-        {% if post.comments %}
+        {% if not post.comments %}
           {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
             <span class="post-comments-count">
               <span class="post-meta-divider">|</span>
