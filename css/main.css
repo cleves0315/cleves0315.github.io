@@ -1624,7 +1624,6 @@ mobile-smallest()
 }
 .sidebar-inner {
   position: relative;
-  padding: 15px;
   color: #999;
   text-align: center;
 }
@@ -1778,7 +1777,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #751b82;
+  background: #a8ff6c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1807,6 +1806,11 @@ mobile-smallest()
 .sidebar-nav {
   margin: 0 0 20px;
   padding-left: 0;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 .sidebar-nav li {
   display: inline-block;
@@ -1816,7 +1820,7 @@ mobile-smallest()
   color: #555;
 }
 .sidebar-nav li:hover {
-  color: #fc6423;
+  color: #00c3ff;
 }
 .page-post-detail .sidebar-nav-toc {
   padding: 0 5px;
@@ -1825,11 +1829,11 @@ mobile-smallest()
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #fc6423;
-  border-bottom-color: #fc6423;
+  color: #00c3ff;
+  border-bottom-color: #00c3ff;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #fc6423;
+  color: #00c3ff;
 }
 .sidebar-panel {
   display: none;
@@ -1843,6 +1847,10 @@ mobile-smallest()
 }
 .post-toc-wrap {
   overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 .post-toc {
   overflow: auto;
@@ -1866,7 +1874,7 @@ mobile-smallest()
   border-bottom-color: #ccc;
 }
 .post-toc ol a:hover {
-  color: #000;
+  color: #00c3ff;
   border-bottom-color: #000;
 }
 .post-toc .nav-item {
@@ -1904,6 +1912,12 @@ mobile-smallest()
 }
 .footer img {
   border: none;
+}
+.footer .theme-link {
+  color: #00c3ff;
+}
+.footer .theme-link:hover {
+  color: #00c3ff;
 }
 .footer-inner {
   text-align: center;
@@ -2612,6 +2626,7 @@ mobile-smallest()
 .header .header-wrapper .logo-wrapper .name {
   font-size: 52px;
   font-weight: 100;
+  user-select: none;
   color: #00c3ff;
   text-transform: capitalize;
   font-family: 'Candyshop';
@@ -3062,10 +3077,7 @@ mobile-smallest()
   box-sizing: border-box;
   width: 280px;
   color: #2f3542;
-  background: #fff;
   overflow: hidden;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
-  border-radius: 10px;
 }
 .sidebar-inner.affix {
   position: fixed;
@@ -3073,6 +3085,12 @@ mobile-smallest()
 }
 .sidebar-inner.affix-bottom {
   position: absolute;
+}
+.site-overview-wrap {
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 .site-overview {
   text-align: left;
@@ -3418,7 +3436,7 @@ mobile-smallest()
 .footer {
   position: static;
   padding: 0;
-  margin: 0;
+  margin-top: 15px;
 }
 .footer .footer-inner {
   width: 100%;
