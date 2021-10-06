@@ -1773,7 +1773,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1c735d;
+  background: #7c9aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2607,7 +2607,7 @@ mobile-smallest()
     right: 0;
     bottom: 0;
     height: 50px;
-    z-index: 66;
+    z-index: 9999;
   }
 }
 .header .header-wrapper .logo-wrapper {
