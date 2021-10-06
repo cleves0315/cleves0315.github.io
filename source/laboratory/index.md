@@ -17,6 +17,9 @@ type: "laboratory"
 </div>
 
 <style>
+  .post-body {
+    min-height: 600px;
+  }
   .work-title {
     font-size: 18px;
     font-weight: 700;
