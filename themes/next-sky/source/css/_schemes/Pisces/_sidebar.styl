@@ -16,11 +16,8 @@
   box-sizing: border-box;
   width: $sidebar-desktop;
   color: $text-color;
-  background: white;
   overflow: hidden;
-  box-shadow: $post-block-shadow;
-  border-radius: $border-radius;
-
+  
   &.affix {
     position: fixed;
     top: $sidebar-offset;
@@ -30,6 +27,13 @@
     position: absolute;
   }
 
+}
+
+.site-overview-wrap {
+  padding: 15px;
+  background: #fff;
+  border-radius: $border-radius;
+  box-shadow: $post-block-shadow;
 }
 
 .site-overview {

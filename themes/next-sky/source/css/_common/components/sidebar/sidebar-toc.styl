@@ -4,7 +4,13 @@
   color: $grey-dim;
 }
 
-.post-toc-wrap { overflow: hidden; }
+.post-toc-wrap {
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: $post-block-shadow;
+}
 
 .post-toc { overflow: auto; }
 
@@ -24,7 +30,7 @@
     border-bottom-color: $toc-link-border-color;
 
     &:hover {
-      color: $toc-link-hover-color;
+      color: $theme-blue;
       border-bottom-color: $toc-link-hover-border-color;
     }
   }
