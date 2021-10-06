@@ -12,7 +12,6 @@ type: "laboratory"
   </div>
   <div class="work-desc">
     一个todo小程序，方便管理、计划自己的一天。
-    <!-- <img src="https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/gh_e084921619aa_258.jpg?sign=c19734fbb394c0317577f5047b961767&t=1633508413" /> -->
   </div>
 </div>
 
@@ -25,7 +24,7 @@ type: "laboratory"
     font-weight: 700;
   }
   .work-desc {
-    color: #666;
+    color: #777;
   }
   .broccoli {
     width: 18px;

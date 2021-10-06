@@ -1,3 +1,5 @@
+<div class="run-time">该博客已经运行了<span id="since"></span></div>
+
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}&copy;{#

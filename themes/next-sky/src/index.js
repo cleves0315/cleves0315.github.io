@@ -1,22 +1,22 @@
 require('./affix');
 require('./pjax');
 require('./evanyou');
+require('./since');
 require('./scrollspy');
 require('./post-details')();
 
 window.PrePath = location.pathname;
 
 $(document).ready(function () {
-  console.log('dom-ready')
   var sidebarInner = $('.sidebar-inner');
 
   Affix.initSideBar();
   resizeListener();
 
   if (location.pathname === '/') {
-    $('#content-wrap').addClass('home-content-wrap')
+    $('#content-wrap').addClass('home-content-wrap');
   } else {
-    $('#content-wrap').removeClass('home-content-wrap')
+    $('#content-wrap').removeClass('home-content-wrap');
   }
 
   function resizeListener () {

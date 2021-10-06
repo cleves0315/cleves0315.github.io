@@ -132,6 +132,7 @@
     root: '{{ theme.root }}',
     scheme: '{{ theme.scheme }}',
     version: '{{ theme.version }}',
+    since: '{{ theme.footer.since }}',
     sidebar: {{ theme.sidebar | json_encode }},
     fancybox: {{ theme.fancybox }},
     tabs: {{ theme.tabs.enable }},
