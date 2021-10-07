@@ -4,7 +4,7 @@ date: 2014-06-19 01:53:52
 type: "about"
 ---
 
-![avatar](/images/sidebar-card-avatar.png)
+<a href="/images/sidebar-card-avatar.png" class="fancybox fancybox.image" rel="group"><img src="/images/sidebar-card-avatar.png" /></a>
 Hi，我是 Cleves。
 一个热衷于游戏的探索，喜欢代码的纯粹，至爱音乐的多情，一个简单朴素的男孩
 
@@ -35,7 +35,7 @@ Hi，我是 Cleves。
 
 ## 抓到我
 <ul>
-    <li><a class="link" href="https://github.com/cleves0315">Gitbug @Cleves</a></li>
+    <li><a class="link" href="https://github.com/cleves0315">Githug @Cleves</a></li>
     <li><a class="link" href="https://twitter.com/cleves0315">Twitter @Cleves</a></li>
     <li><a class="link" href="https://space.bilibili.com/53755614">bilibili @Cleves</a></li>
     <li><a class="link" href="https://music.163.com/#/user/home?id=314122865">网易云 @Cleves</a></li>

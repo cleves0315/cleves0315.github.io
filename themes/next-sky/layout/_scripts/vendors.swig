@@ -14,14 +14,14 @@
 {% endfor %}
 
 {% set js_vendors = {} %}
-{% set js_vendors.jquery      = '' %}
-{% set js_vendors.fastclick   = '' %}
-{% set js_vendors.lazyload    = '' %}
-{% set js_vendors.velocity    = '' %}
-{% set js_vendors.velocity_ui = '' %}
-{% set js_vendors.pjax = '' %}
-{% set js_vendors.fancybox  = '' %}
-{% set js_vendors.nprogress  = '' %}
+{% set js_vendors.jquery      = true %}
+{% set js_vendors.fastclick   = true %}
+{% set js_vendors.lazyload    = true %}
+{% set js_vendors.velocity    = true %}
+{% set js_vendors.velocity_ui = true %}
+{% set js_vendors.pjax = true %}
+{% set js_vendors.fancybox  = true %}
+{% set js_vendors.nprogress  = true %}
 
 {% for name, internal in js_vendors %}
   <script type="text/javascript" src="{{ theme.vendors[name] }}"></script>

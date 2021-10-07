@@ -25,10 +25,11 @@
   {% elseif theme.disqus.enable %}
     <div class="comments" id="comments">
       <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
+        <div id="dsqjs">
+          <section class="dsqjs-info">
+            <p id="dsqjs-load-disqus" class="dsqjs-message">评论加载中<i class="fa fa-commenting-o" aria-hidden="true"></i>...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+          </section>
+        </div>
       </div>
     </div>
 
@@ -66,5 +67,7 @@
     <div class="comments" id="comments">
     </div>
   {% endif %}
+
+  {% include '../_third-party/comments/index.swig' %}
 
 {% endif %}
