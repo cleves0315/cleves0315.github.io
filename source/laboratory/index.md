@@ -33,4 +33,7 @@ type: "laboratory"
     background-size: 100%;
     background-image: url(https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/broccoli.png?sign=7a71e8a11a31d13adccb19412f388722&t=1633508945)
   }
+  .fa {
+    color: #333;
+  }
 </style>

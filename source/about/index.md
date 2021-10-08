@@ -111,5 +111,8 @@ h2 {
 .post-body li a {
     margin-right: 10px;
 }
+.fa {
+    color: #333;
+}
 </style>
 {% endraw %}
