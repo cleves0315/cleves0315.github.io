@@ -36,6 +36,13 @@ $(document).on('pjax:end', function () {
   NProgress.done();
   require('./post-details')();
 
+  setTimeout(() => {
+    const $disqus = $('#disqus_thread').find('iframe');
+    if ($disqus.length > 0) {
+      $('#dsqjs').hide();
+    }
+  }, 500);
+
   if (location.pathname === '/') {
     $('#content-wrap').addClass('home-content-wrap')
   } else {
