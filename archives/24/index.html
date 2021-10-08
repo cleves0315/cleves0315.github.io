@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=1.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=1.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=1.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=1.1.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Cleves" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;    &lt;title&gt;SIP + WebRTC + freeSWITCH&lt;&#x2F;title&gt;    &lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sip.js + freeswitch 软电话(webRTC)demo">
+<meta property="og:url" content="http://example.com/archives/24/index.html">
+<meta property="og:site_name" content="Hi, Cleves">
+<meta property="og:description" content="12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;    &lt;title&gt;SIP + WebRTC + freeSWITCH&lt;&#x2F;title&gt;    &lt;meta http-equiv&#x3D;&quot;Content-Type&quot; content&#x3D;&amp;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-10-08T20:30:00.000Z">
+<meta property="article:modified_time" content="2021-10-08T13:06:13.745Z">
+<meta property="article:author" content="cleves">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '1.1.0',
+    since: '6/26/2021 11:34:00',
+    sidebar: {"position":"right","display":"post","offset":60,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+
+
+  <link rel="canonical" href="http://example.com/archives/24/"/>
+
+
+
+
+
+  <title>sip.js + freeswitch 软电话(webRTC)demo | Hi, Cleves</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-wrapper">
+        <div class="header-inner">
+          
+            <div class="logo-wrapper">
+              <div class="name">cleves</div>
+            </div>
+          <nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            <span class="menu-item-name">首页</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-laboratory">
+          <a href="/laboratory" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br />
+            
+            <span class="menu-item-name">实验室</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            <span class="menu-item-name">归档</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            <span class="menu-item-name">关于我</span>
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+
+
+
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <main id="main" class="main">
+        
+        <div class="main-inner">
+          <div id="content-wrap" class="content-wrap">
+            <div id="content" class="content">
+              
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <link itemprop="mainEntityOfPage" href="http://example.com/archives/24/">
+
+  
+
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/web%E8%BD%AF%E7%94%B5%E8%AF%9D/" itemprop="url" rel="index">
+          <span itemprop="name">web软电话</span>
+        </a>
+      </span>
+    
+  </div>
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hi, Cleves">
+  </span>
+
+  
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">sip.js + freeswitch 软电话(webRTC)demo</h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">发表于</span>
+            
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-10-08T20:30:00+00:00">
+              2021-10-08
+            </time>
+          
+
+          
+
+          
+        </span>
+
+        
+
+        
+
+        
+
+        
+          <span class="post-wordcount">
+            
+              
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">字数统计&#58;</span>
+              
+              <span title="字数统计">
+                1,250
+              </span>
+            
+
+            
+
+            
+          </span>
+        
+
+        
+        
+          <span id="/archives/24/" class="leancloud_visitors" data-flag-title="sip.js + freeswitch 软电话(webRTC)demo">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
+            
+              <span class="post-meta-item-text">被</span>
+            
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
+        
+
+        
+
+      </div>
+    </header>
+  
+
+  
+  
+  
+  <div class="post-body" itemprop="articleBody">
+
+    
+    
+
+    
+      <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>SIP + WebRTC + freeSWITCH<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./assets/js/jquery-1.10.2.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./assets/js/sip-0.7.7.js&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./assets/js/discard.js?v=1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">&quot;remoteAudio&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">&quot;localAudio&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;login&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;logout&quot;</span>&gt;</span>登陆<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;logout&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;logout&quot;</span>&gt;</span>登出<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;register&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;register&quot;</span>&gt;</span>就绪<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;unregister&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;unregister&quot;</span> <span class="attr">style</span>=<span class="string">&quot;margin-right: 10px;&quot;</span>&gt;</span>取消就绪<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;call&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;call&quot;</span>&gt;</span>拨打<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;hang-up&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;hangup&quot;</span>&gt;</span>挂断<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;answer&quot;</span> <span class="attr">data-action</span>=<span class="string">&quot;answer&quot;</span>&gt;</span>接听<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> softPhoneUA = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> currentSession = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  <span class="attr">wsAddress</span>: <span class="string">&#x27;xxxxx&#x27;</span>,   <span class="comment">// 即时通讯地址</span></span><br><span class="line">  <span class="attr">wsPort</span>: <span class="string">&#x27;xxxx&#x27;</span>,  <span class="comment">// 即时通讯端口</span></span><br><span class="line">  <span class="attr">number</span>: <span class="string">&#x27;xxxx&#x27;</span>,  <span class="comment">// 分机号</span></span><br><span class="line">  <span class="attr">password</span>: <span class="string">&#x27;xxx&#x27;</span>,  <span class="comment">// 密码</span></span><br><span class="line">  <span class="attr">displayName</span>: <span class="string">&#x27;xx&#x27;</span>,  <span class="comment">// 显示名</span></span><br><span class="line">  <span class="attr">convrsationOptions</span>: &#123;</span><br><span class="line">    <span class="attr">media</span>: &#123;</span><br><span class="line">      <span class="attr">constraints</span>: &#123;</span><br><span class="line">        <span class="attr">audio</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">video</span>: <span class="literal">false</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">render</span>: &#123;</span><br><span class="line">        <span class="attr">remote</span>: <span class="built_in">document</span>.getElementById(<span class="string">&#x27;remoteAudio&#x27;</span>),</span><br><span class="line">        <span class="comment">// local: document.getElementById(&#x27;localAudio&#x27;)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> softPhone = &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 登陆软电话</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">start</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> config = &#123;</span><br><span class="line">      <span class="attr">uri</span>: <span class="string">`<span class="subst">$&#123;options.number&#125;</span>@<span class="subst">$&#123;options.wsAddress&#125;</span>`</span>,</span><br><span class="line">      <span class="attr">wsServers</span>: <span class="string">`wss://<span class="subst">$&#123;options.wsAddress&#125;</span>:<span class="subst">$&#123;options.wsPort&#125;</span>`</span>,</span><br><span class="line">      <span class="attr">authorizationUser</span>: options.number,  <span class="comment">// 授权号</span></span><br><span class="line">      <span class="attr">displayName</span>: options.displayName,   <span class="comment">// 显示名称</span></span><br><span class="line">      <span class="attr">password</span>: options.password,     <span class="comment">// 登陆密码</span></span><br><span class="line">      <span class="attr">allowLegacyNotifications</span>:<span class="literal">true</span>,</span><br><span class="line">      <span class="attr">autostart</span>: <span class="literal">true</span>,   <span class="comment">// 自动连接</span></span><br><span class="line">      <span class="attr">register</span>: <span class="literal">false</span>,   <span class="comment">// 自动就绪</span></span><br><span class="line">      <span class="attr">rel100</span>: SIP.C.supported.SUPPORTED, <span class="comment">// 该选项开启接收早期媒体(采坑记录)</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    softPhoneUA = <span class="keyword">new</span> SIP.UA(config);</span><br><span class="line"></span><br><span class="line">    softPhone.UAEvent(softPhoneUA);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 有电话呼入</span></span><br><span class="line">    softPhoneUA.on(<span class="string">&#x27;invite&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">session</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;invite&#x27;</span>)</span><br><span class="line">      currentSession = session;</span><br><span class="line"></span><br><span class="line">      softPhone.sessionEvent(session);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** 就绪 */</span></span><br><span class="line">  <span class="function"><span class="title">register</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    softPhoneUA.register(&#123;  <span class="comment">// 注册</span></span><br><span class="line">      <span class="attr">register</span>:<span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** 取消就绪 */</span></span><br><span class="line">  <span class="function"><span class="title">unregister</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    softPhoneUA.unregister();</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 绑定ua事件</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>ua </span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">UAEvent</span>(<span class="params">ua</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 开始尝试连接</span></span><br><span class="line">    ua.on(<span class="string">&#x27;connecting&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">args</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c connecting&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 连接完毕</span></span><br><span class="line">    ua.on(<span class="string">&#x27;connected&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c connected&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 主动取消注册或注册后定期重新注册失败</span></span><br><span class="line">    ua.on(<span class="string">&#x27;unregistered&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c unregistered&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 注册成功</span></span><br><span class="line">    ua.on(<span class="string">&#x27;registered&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c registered&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// websocket 连接失败</span></span><br><span class="line">    ua.on(<span class="string">&#x27;disconnected&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c disconnected&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 绑定session事件</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param <span class="type">&#123;&#125;</span> </span>session </span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">sessionEvent</span>(<span class="params">session</span>)</span> &#123;</span><br><span class="line">    session.on(<span class="string">&quot;rejected&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c invite-rejected&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    session.on(<span class="string">&quot;bye&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c invite-bye&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    session.on(<span class="string">&quot;accepted&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c invite-accepted&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    session.on(<span class="string">&quot;cancel&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c invite-cancel&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 拨打</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">call</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;callOut&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> telNumber = <span class="string">&#x27;xxxx&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    currentSession = softPhoneUA.invite(<span class="string">`<span class="subst">$&#123;telNumber&#125;</span>@<span class="subst">$&#123;options.wsAddress&#125;</span>`</span>, options.convrsationOptions)</span><br><span class="line"></span><br><span class="line">    currentSession.on(<span class="string">&quot;rejected&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c rejected&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    currentSession.on(<span class="string">&quot;bye&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 本次通话结束</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c bye&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    currentSession.on(<span class="string">&quot;accepted&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 对方接听</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c accepted&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    currentSession.on(<span class="string">&quot;cancel&quot;</span> , <span class="function"><span class="keyword">function</span> (<span class="params">response, cause</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 取消通话</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;%c cancel&#x27;</span>, <span class="string">&#x27;color: #f00&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 挂断</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">hangUp</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (currentSession <span class="keyword">instanceof</span> <span class="built_in">Object</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (currentSession.hasAnswer) &#123;</span><br><span class="line">        currentSession.bye();</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentSession.isCanceled == <span class="literal">false</span>) &#123;</span><br><span class="line">        currentSession.cancel();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        currentSession.reject();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 接听</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">answer</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    currentSession.accept(options.convrsationOptions)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 登出</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="title">logout</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (softPhoneUA <span class="keyword">instanceof</span> <span class="built_in">Object</span>) &#123;</span><br><span class="line">      softPhoneUA.unregister(); <span class="comment">// 注销</span></span><br><span class="line">      softPhoneUA.stop(&#123;</span><br><span class="line">        <span class="attr">register</span>:<span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="string">&#x27;.login&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.start);</span><br><span class="line">  $(<span class="string">&#x27;.logout&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.logout);</span><br><span class="line">  $(<span class="string">&#x27;.register&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.register);</span><br><span class="line">  $(<span class="string">&#x27;.unregister&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.unregister);</span><br><span class="line">  $(<span class="string">&#x27;.call&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.call);</span><br><span class="line">  $(<span class="string">&#x27;.hang-up&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.hangUp);</span><br><span class="line">  $(<span class="string">&#x27;.answer&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, softPhone.answer);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">  addEvent();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>说明： 基本以上的代码就是一份简略版的demo了，按照参数配置输入即可完成登录后拨打接听功能。</p>
+<p>依赖库：</p>
+<p>jquery-1.10.2<br><a target="_blank" rel="noopener" href="https://sipjs.com/download/">sip-0.7.7</a></p>
+<h2 id="软电话使用："><a href="#软电话使用：" class="headerlink" title="软电话使用："></a>软电话使用：</h2><p>登陆fs服务器：<br>最繁琐的就是登陆流程，登陆流程接收的参数很多，没有一个好的demo很容易采坑，官方给出的demo都不完整。</p>
+<p>登陆中的config配置在代码上基本都注释了含义，这里文字说明下登陆后返回的对象和对象所拥有的事件</p>
+<h2 id="UA对象："><a href="#UA对象：" class="headerlink" title="UA对象："></a>UA对象：</h2><p>new SIP.UA(config) 后会返回一个UA对象<br>主要用途和方法： 就绪软电话、监听软电话连接状态、监听电话呼入、拨打电话、登出软电话系统</p>
+<h2 id="session对象-webRTC-："><a href="#session对象-webRTC-：" class="headerlink" title="session对象(webRTC)："></a>session对象(webRTC)：</h2><p>当前软电话建立一个通话时创建：UA.invite()<br>主要用途和方法： 接听当前来电、挂断当前通话、监听当前通话状态</p>
+<p>以上代码亲测有效可以进行简单拨打，更详细的内容可以参考下 <a target="_blank" rel="noopener" href="https://sipjs.com/api/0.7.0/ua/">sip.js官方文档</a></p>
+<p>PS: jsSIP 和 SIP.js 是两个插件。起先我们项目使用了jsSIP，因为他官方的文档和demo好理解，但是后面发现一个<a target="_blank" rel="noopener" href="https://www.cnblogs.com/moon-lights/p/6911596.html">早期媒体</a>问题一直无法解决。最终换了sip.js获取到了早期媒体。</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a target="_blank" rel="noopener" href="https://sipjs.com/api/0.7.0/">sip.js</a><br><a target="_blank" rel="noopener" href="https://github.com/onsip/SIP.js/tree/master/docs">sip github</a><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream">MediaStream</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336290984">浏览器（webRTC）如何获取音视频流</a><br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1660500657913249757&wfr=spider&for=pc">视频通讯使用的SIP协议详解</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/94b118b8fd97">SDP协议</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cnhk19/p/9473519.html">webRTC入门</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lotushy/p/3964076.html">webRTC demo</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/moon-lights/p/6911596.html">SIP中的早期媒体和回铃音的产生</a></p>
+
+    
+  </div>
+  
+  
+  
+
+  
+
+  
+
+  
+
+  <footer class="post-footer">
+    
+
+    
+    
+    
+
+    
+      <div class="post-nav">
+        <div class="post-nav-next post-nav-item">
+          
+            <a href="/archives/23/" rel="next" title="Linux下安装 Mysql + Nginx + PHP">
+              <i class="fa fa-chevron-left"></i> Linux下安装 Mysql + Nginx + PHP
+            </a>
+          
+        </div>
+
+        <span class="post-nav-divider"></span>
+
+        <div class="post-nav-prev post-nav-item">
+          
+        </div>
+      </div>
+    
+
+    
+  </footer>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+            
+
+
+            
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div id="dsqjs">
+          <section class="dsqjs-info">
+            <p id="dsqjs-load-disqus" class="dsqjs-message">评论加载中<i class="fa fa-commenting-o" aria-hidden="true"></i>...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+  
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://Cleves.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://example.com/archives/24/';
+          this.page.identifier = '/archives/24/';
+          this.page.title = 'sip.js + freeswitch 软电话(webRTC)demo';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Cleves.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          
+            
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <div class="site-author-image-wrap">
+                <img class="site-author-image" itemprop="image"
+                  src="/images/sidebar-card-avatar.png"
+                  alt="" />
+              </div>
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <div class="site-state-title">你能抓到我吗？</div>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://space.bilibili.com/53755614" target="_blank" title="bilibili">
+                    
+                       <i style="fill: #20B0E3;"><svg width="30" height="30" t="1581180571735" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1122"><path d="M813.2864 234.5216h-53.0176l46.3872-46.3872c19.8912-19.8912 19.8912-59.648 0-79.5136s-59.648-19.8912-79.5136 0l-132.5312 125.9008h-159.0272l-132.5312-125.9008c-19.8912-19.8912-59.648-19.8912-79.5136 0s-19.8912 59.648 0 79.5136l46.3872 46.3872H216.9088c-92.7744 0-165.6576 72.8832-165.6576 165.6576v357.8112c0 99.4048 72.8832 172.288 165.6576 172.288h589.7216c92.7744 0 165.6576-72.8832 165.6576-165.6576V400.1792c6.6304-92.7744-66.2528-165.6576-159.0272-165.6576z m46.3872 523.4688a59.392 59.392 0 0 1-59.648 59.648H223.5392a59.392 59.392 0 0 1-59.648-59.648V406.8096a59.392 59.392 0 0 1 59.648-59.648h576.4864a59.392 59.392 0 0 1 59.648 59.648v351.1808z m-516.864-291.5328a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z m344.576 0a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z" p-id="1123"></path></svg></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cleves0315" target="_blank" title="GitHub">
+                    
+                       <i class="fa fa-github" style="color: #191717; font-size: 30px;"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://music.163.com/#/user/home?id=314122865" target="_blank" title="网易云">
+                    
+                       <svg width="30" height="30" t="1633272252165" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2449" width="200" height="200"><path d="M339.5999999 32.00000001h344.80000003C792.00000004 32.00000001 832.00000003 43.20000002 869.19999995 64.00000003A218.00000015 218.00000015 0 0 1 959.99999997 154.80000005c20.80000001 37.20000002 31.99999996 77.20000012 32.00000002 184.80000002v344.79999986c0 106.79999999-11.19999999 145.60000002-32.00000002 184.80000019A218.00000015 218.00000015 0 0 1 869.19999995 959.99999997c-40.00000007 20.80000001-77.99999993 31.99999996-184.80000002 32.00000002h-344.79999986C231.99999996 991.99999999 191.99999997 980.79999998 154.80000005 959.99999997A218.00000015 218.00000015 0 0 1 64.00000003 869.19999995C43.20000002 832.00000003 32.00000001 792.00000004 32.00000001 684.4000001v-344.80000003C32.00000001 231.99999996 43.20000002 191.99999997 64.00000003 154.80000005A218.00000015 218.00000015 0 0 1 154.80000005 64.00000003C191.99999997 43.20000002 231.99999996 32.00000001 339.5999999 32.00000001z" fill="#d81e06" p-id="2450"></path><path d="M654 155.59999994a167.20000015 167.20000015 0 0 1 62.79999998 30.39999995 46.8 46.8 0 0 1 15.99999991 19.60000013 40.00000007 40.00000007 0 0 1-3.60000002 37.20000001 40.00000007 40.00000007 0 0 1-54.79999986 12.39999998c-4.4-2.80000004-7.59999987-6.80000004-11.99999995-9.19999997a72.39999995 72.39999995 0 0 0-40.00000003-13.20000004 40.00000007 40.00000007 0 0 0-25.60000002 13.20000004 28.4 28.4 0 0 0-7.60000007 25.60000008l14.80000003 55.59999989a214.40000001 214.40000001 0 0 1 100.80000003 29.60000001 287.6000001 287.6000001 0 0 1 77.19999999 69.19999997 240 240 0 0 1 40.00000018 79.99999984A265.99999996 265.99999996 0 0 1 832.00000003 598.40000004a293.60000011 293.60000011 0 0 1-16.00000002 76.79999997 300.79999999 300.79999999 0 0 1-120.00000002 147.20000002 320.00000003 320.00000003 0 0 1-132.39999988 46.39999991 331.19999998 331.19999998 0 0 1-97.20000009 0 320.00000003 320.00000003 0 0 1-175.19999991-92.80000007 344.00000005 344.00000005 0 0 1-90.80000011-317.19999999 337.60000001 337.60000001 0 0 1 202.40000001-239.99999975 53.59999988 53.59999988 0 0 1 44.79999999 2.39999987A40.00000007 40.00000007 0 0 1 464.00000001 258.80000011a40.00000007 40.00000007 0 0 1-25.60000002 32.79999983 257.59999994 257.59999994 0 0 0-163.59999999 206.40000005 262.40000011 262.40000011 0 0 0 14.39999999 127.19999998 258.4 258.4 0 0 0 119.99999999 138.39999999A234.00000003 234.00000003 0 0 0 518.4 789.99999996a272.80000013 272.80000013 0 0 0 91.60000007-16.40000009 217.19999987 217.19999987 0 0 0 118.39999986-101.59999982 177.60000011 177.60000011 0 0 0 15.20000008-35.99999989 199.99999989 199.99999989 0 0 0 0-111.20000017 168.79999985 168.79999985 0 0 0-50.79999991-77.99999989A222.40000002 222.40000002 0 0 0 659.20000018 422.40000001a128.39999999 128.39999999 0 0 0-33.6000002-12.80000002c7.99999999 31.99999996 16.8 63.99999987 25.20000003 96.40000016l3.99999998 23.19999967a136.39999998 136.39999998 0 0 1-109.99999999 138.40000019 130.79999977 130.79999977 0 0 1-96.00000001-17.99999999 144.4 144.4 0 0 1-56.8-73.59999999 174.79999995 174.79999995 0 0 1-9.59999986-52.40000013 180.8000001 180.8000001 0 0 1 30.40000004-110.39999989 199.99999989 199.99999989 0 0 1 111.19999982-76.8l-9.60000004-37.20000004a110.39999998 110.39999998 0 0 1 6.00000018-80.0000001 115.59999997 115.59999997 0 0 1 28.79999989-36.39999988A117.59999999 117.59999999 0 0 1 591.99999998 156.39999994a120.00000001 120.00000001 0 0 1 62.00000002-0.79999983z" fill="#ffffff" p-id="2451"></path><path d="M488.79999995 447.6a93.60000012 93.60000012 0 0 0-23.59999995 44.80000004 120.00000001 120.00000001 0 0 0 0 46.39999994 69.2 69.2 0 0 0 26.4 43.19999988 50.80000013 50.80000013 0 0 0 40.00000001 7.60000029A55.99999999 55.99999999 0 0 0 576.79999989 537.60000014a144 144 0 0 0-3.59999987-18.40000021L545.60000004 414.79999999a127.60000001 127.60000001 0 0 0-56.80000009 32.80000001z" fill="#d81e06" p-id="2452"></path></svg></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/cleves0315" target="_blank" title="Twitter">
+                    
+                       <i class="fa fa-twitter" style="color: #2FB0EC; font-size: 30px;"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AF%E7%94%B5%E8%AF%9D%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">软电话使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UA%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">UA对象：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session%E5%AF%B9%E8%B1%A1-webRTC-%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">session对象(webRTC)：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">参考资料：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <footer id="footer" class="footer">
+          <div class="footer-inner">
+            <div class="run-time">该博客已经运行了<span id="since"></span></div>
+
+<div class="copyright">&copy;<span itemprop="copyrightYear">2021</span>
+  <span class="author" itemprop="copyrightHolder">Hi, Cleves.</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动.</div>
+
+
+<div>Theme By <a class="theme-link" href="https://github.com/cleves0315" target="_blank" class="external" rel="nofollow">Sky</a> v1.1.0.</div>
+<div>Made with <i class="fa fa-heart" style="color: #d43f57;"></i> by cleves.</div>
+
+            
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+      
+
+      
+
+    </div>
+    
+  </aside>
+
+
+          
+        </div>
+      </main>
+
+      
+
+      
+        <div class="back-to-top">
+          <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
+          
+        </div>
+      
+
+      
+      
+    </div>
+
+  </div>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=1.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=1.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=1.1.0"></script>
+
+  <script type="text/javascript" src="/js/sky.js?v=1.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=1.1.0"></script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.3.1/av-min.js"></script>
+  <script>AV.initialize("5sTAnPxuLGAauoJb8i7oMRFf-9Nh9j0Va", "FfW13xNPVMHEfLmSQ9FNesFQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .then(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find()
+        .then(function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save()
+              .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              })
+              .then(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save()
+              .then(function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              })
+              .then(function(newcounter, error) {
+                console.log('Failed to create');
+              });
+          }
+        });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
