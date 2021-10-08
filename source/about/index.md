@@ -6,7 +6,7 @@ type: "about"
 
 <a href="/images/sidebar-card-avatar.png" class="fancybox fancybox.image" rel="group"><img src="/images/sidebar-card-avatar.png" /></a>
 Hi，我是 Cleves。
-一个热衷于游戏的探索，喜欢代码的纯粹，至爱音乐的多情，一个简单朴素的男孩
+一个热衷于游戏的探索，喜欢代码的纯粹，至爱音乐的 一个简单朴素的男孩
 
 ## 构成要素
 
@@ -14,7 +14,7 @@ Hi，我是 Cleves。
 | ----| ---- |
 | 生日 | 1995-11-19 |
 | 特征 | 喜欢笑 |
-| 一句话 | 爱笑的人，运气都比较差吧。 |
+| 一句话 | 爱笑的人，运气都比较差 |
 | 最喜欢的作品 | 未闻花名、濒危物种少女、Cannad、鬼灭之刃、咒术回战 |
 | 最喜欢的游戏 | FC合集、原神、塞尔达 |
 | 最喜欢的音乐 | 起风了、Exile、City Of Stars |

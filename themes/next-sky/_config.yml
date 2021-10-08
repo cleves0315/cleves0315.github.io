@@ -27,15 +27,14 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16.ico
-  medium: /images/favicon-32x32.ico
+  normal: /images/favicon.ico
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Hexo, Cleves"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -248,9 +247,9 @@ post_wordcount:
 
 # Reward
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
-wechatpay: /images/wechatpay.jpg
-alipay: /images/alipay.jpg
-bitcoin: /images/bitcoin.png
+wechatpay:
+alipay:
+bitcoin:
 
 # Declare license on posts
 post_copyright:
@@ -828,9 +827,6 @@ js: js
 images: images
 
 header_site_brand: /images/shenli.webp
-# header_site_brand: /images/youname.png
-# header_site_brand: /images/could.mp4
-# header_site_brand: /images/site-brand.jpg
 
 # Theme version
 version: 1.1.0
