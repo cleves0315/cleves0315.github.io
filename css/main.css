@@ -1666,7 +1666,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff3c;
+  background: #ff8fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2513,6 +2513,7 @@ mobile-smallest()
   }
 }
 .header .header-wrapper .logo-wrapper .name {
+  display: none;
   font-size: 52px;
   font-weight: 100;
   user-select: none;
@@ -2520,6 +2521,21 @@ mobile-smallest()
   text-transform: capitalize;
   font-family: 'Candyshop';
   text-shadow: 4px 0px 0px #fff, -4px 0px 0 #fff, 0px 4px 0 #fff, 0px -4px 0 #fff;
+}
+@media (min-width: 1300px) {
+  .header .header-wrapper .logo-wrapper .name {
+    display: block;
+  }
+}
+.header .header-wrapper .logo-wrapper .avatar {
+  width: 54px;
+  margin: 20px 0 40px;
+  border-radius: 50%;
+}
+@media (min-width: 1300px) {
+  .header .header-wrapper .logo-wrapper .avatar {
+    display: none;
+  }
 }
 .header .header-wrapper .header-inner {
   position: fixed;
@@ -2539,6 +2555,7 @@ mobile-smallest()
 .main-container {
   position: relative;
   flex-grow: 1;
+  max-width: 100%;
 }
 @media (min-width: 550px) and (max-width: 819px) {
   .main-container {
