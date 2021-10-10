@@ -26,6 +26,7 @@
           {%  if theme.scheme === 'Pisces' %}
             <div class="logo-wrapper">
               <div class="name">{{ config.author }}</div>
+              <img class="avatar" src="{{ url_for( theme.avatar ) }}" />
             </div>
           {% endif %}
           {%- include '_partials/header.swig' %}

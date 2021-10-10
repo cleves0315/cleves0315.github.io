@@ -25,7 +25,7 @@ Hi，我是 Cleves。
 <div class="work-wrap">
   <div class="work-title">
     海带与西兰花&nbsp;
-    <a href=""><i class="fa fa-github"></i></a>
+    <a href=""><i class="fa fa-github" style="color: #333;"></i></a>
     <a href="https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/gh_e084921619aa_258.jpg?sign=c19734fbb394c0317577f5047b961767&t=1633508413" target="_blank"><i class="fa broccoli"></i></a>
   </div>
   <div class="work-desc">
@@ -110,9 +110,6 @@ h2 {
 
 .post-body li a {
     margin-right: 10px;
-}
-.fa {
-    color: #333;
 }
 </style>
 {% endraw %}

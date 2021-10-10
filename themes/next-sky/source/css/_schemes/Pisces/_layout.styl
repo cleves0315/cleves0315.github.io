@@ -47,6 +47,7 @@
       }
 
       .name {
+        display: none;
         font-size: 52px;
         font-weight: 100;
         user-select: none;
@@ -54,6 +55,20 @@
         text-transform: capitalize;
         font-family: $font-family-title;
         text-shadow: 4px 0px 0px #fff, -4px 0px 0 #fff, 0px 4px 0 #fff, 0px -4px 0 #fff;
+
+        +desktop-large() {
+          display: block;
+        }
+      }
+
+      .avatar {
+        width: 54px;
+        margin: 20px 0 40px;
+        border-radius: 50%;
+
+        +desktop-large() {
+          display: none;
+        }
       }
     }
 
@@ -77,6 +92,7 @@
 .main-container {
   position: relative;
   flex-grow: 1;
+  max-width: 100%;
 
   +tablet-small() {
     width: unset;
