@@ -1666,7 +1666,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8fff;
+  background: #58cc11;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2974,7 +2974,6 @@ mobile-smallest()
 }
 .sidebar {
   margin-top: 0;
-  margin-left: -100%;
   right: auto;
   bottom: auto;
   -webkit-transform: none;
@@ -3338,6 +3337,9 @@ mobile-smallest()
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+.post-footer {
+  margin-top: 200px;
 }
 .footer {
   position: static;
