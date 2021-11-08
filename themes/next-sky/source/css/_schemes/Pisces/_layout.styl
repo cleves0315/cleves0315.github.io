@@ -95,7 +95,8 @@
   max-width: 100%;
 
   +tablet-small() {
-    width: unset;
+    width: calc(100% - 68px);
+    box-sizing: border-box;
     stretch();
   }
   +mobile() {
@@ -155,17 +156,18 @@
   +desktop() {
     margin: 0 auto;
   }
+  +tablet() {
+    margin: 0 auto;
+  }
   +tablet-small() {
     width: unset;
+    padding-right: 20px;
     stretch();
   }
   +mobile() {
     width: unset;
+    padding: 20px;
     stretch();
-  }
-
-  @media (max-width: 700px) {
-    padding: 0 20px;
   }
 
   .content {
