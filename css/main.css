@@ -1666,7 +1666,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #58cc11;
+  background: #8ec736;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2559,7 +2559,8 @@ mobile-smallest()
 }
 @media (min-width: 550px) and (max-width: 819px) {
   .main-container {
-    width: unset;
+    width: calc(100% - 68px);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -2652,9 +2653,15 @@ mobile-smallest()
     margin: 0 auto;
   }
 }
+@media (min-width: 820px) and (max-width: 1119px) {
+  .content-wrap {
+    margin: 0 auto;
+  }
+}
 @media (min-width: 550px) and (max-width: 819px) {
   .content-wrap {
     width: unset;
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -2663,14 +2670,10 @@ mobile-smallest()
 @media (max-width: 549px) {
   .content-wrap {
     width: unset;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-  }
-}
-@media (max-width: 700px) {
-  .content-wrap {
-    padding: 0 20px;
   }
 }
 @media (min-width: 550px) and (max-width: 819px) {
