@@ -15,9 +15,33 @@ type: "laboratory"
   </div>
 </div>
 
+<div class="work-wrap">
+  <div class="work-title">
+    next-sky&nbsp;
+    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+  </div>
+  <div class="work-desc">
+    该博客项目，使用hexo框架针对next的主题基础上修改。
+  </div>
+</div>
+
+<div class="work-wrap">
+  <div class="work-title">
+    Potato Sign&nbsp;
+    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+    <i class="fa potato-sign"></i>（建设中...）
+  </div>
+  <div class="work-desc">
+    一个Chrome扩展程序，主要功能是保存网页标签。界面方便操作和管理，方便你建立一个属于自己的导航站点
+  </div>
+</div>
+
 <style>
   .post-body {
     min-height: 600px;
+  }
+  .work-wrap {
+    margin-bottom: 20px;
   }
   .work-title {
     font-size: 18px;
@@ -26,11 +50,17 @@ type: "laboratory"
   .work-desc {
     color: #777;
   }
-  .broccoli {
+  .broccoli,
+  .potato-sign {
     width: 18px;
     height: 18px;
     transform: translateY(2px);
     background-size: 100%;
+  }
+  .broccoli {
     background-image: url(https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/broccoli.png?sign=7a71e8a11a31d13adccb19412f388722&t=1633508945)
+  }
+  .potato-sign {
+    background-image: url(./sharpicons_fried-potatoes.png)
   }
 </style>
