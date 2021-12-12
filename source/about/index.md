@@ -29,7 +29,29 @@ Hi，我是 Cleves。
     <a href="https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/gh_e084921619aa_258.jpg?sign=c19734fbb394c0317577f5047b961767&t=1633508413" target="_blank"><i class="fa broccoli"></i></a>
   </div>
   <div class="work-desc">
-    一个todo小程序，方便管理、计划自己的一天。
+    海带与西兰花是一款简约的TodoList小程序，方便你的日常管理。</br>
+    使用原生微信小程序云开发.
+  </div>
+</div>
+
+<div class="work-wrap">
+  <div class="work-title">
+    next-sky&nbsp;
+    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+  </div>
+  <div class="work-desc">
+    该本博客项目，基于hexo
+  </div>
+</div>
+
+<div class="work-wrap">
+  <div class="work-title">
+    PotatoSign&nbsp;
+    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+    <i class="fa potato-sign"></i>（建设中...）
+  </div>
+  <div class="work-desc">
+    一个Chrome扩展程序，主要功能是保存网页标签。界面方便操作和管理，方便你建立一个属于自己的导航站点
   </div>
 </div>
 
