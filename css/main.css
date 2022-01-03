@@ -1666,7 +1666,7 @@ mobile-smallest()
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e4ffd2;
+  background: #ffc1ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3132,6 +3132,12 @@ mobile-smallest()
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+@media (max-width: 549px) {
+  .post {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .post-header {
   margin-bottom: 20px;
