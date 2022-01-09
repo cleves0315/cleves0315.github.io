@@ -69,6 +69,9 @@ Hi，我是 Cleves。
 </ul>
 
 ## 历年年终总结
+<ul>
+    <li><a class="link" href="/archives/25/#more">2021年终总结</a></li>
+</ul>
 
 {% raw %}
 <style>
