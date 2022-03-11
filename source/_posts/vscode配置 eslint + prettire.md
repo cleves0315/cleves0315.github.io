@@ -12,6 +12,7 @@ permalink: /archives/28/
 
 > 一直以来在项目开发上对 eslint 和 prettire 的了解都是片面的。只知道eslint是规范代码，prettire是格式化代码，没有深入了解过怎么配置它们。
 > 
+<!--more-->
 
 本文是从零开始在vscode用 webpack 配置 eslint + prettire
 
