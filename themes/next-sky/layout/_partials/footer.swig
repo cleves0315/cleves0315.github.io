@@ -13,5 +13,5 @@
 #}.</div>
 {% endif %}
 
-<div>Theme By <a class="theme-link" href="https://github.com/cleves0315" target="_blank" class="external" rel="nofollow">Sky</a> v{{ theme.version }}.</div>
-<div>Made with <i class="fa fa-heart" style="color: #d43f57;"></i> by {{ config.author }}.</div>
+<div>Theme By <a class="theme-link" href="https://github.com/cleves0315/cleves0315.github.io" target="_blank" class="external" rel="nofollow">Sky</a> v{{ theme.version }}.</div>
+<div>Made with <i class="fa fa-heart" style="color: #d43f57;"></i> by <a class="theme-link" href="https://github.com/cleves0315">{{ config.author }}</a>.</div>
