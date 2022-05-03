@@ -78,19 +78,17 @@
 
 
 
-<meta name="description" content="题目描述难度中等856收藏分享切换为英文接收动态反馈 请你判断一个 9 x 9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。  数字 1-9 在每一行只能出现一次。 数字 1-9 在每一列只能出现一次。 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）  注意：  一个有效的数独（部分已被填充）不一定是可解的。 只需要根据以上规则，验证已">
+<meta name="description" content="题目描述难度简单158收藏分享切换为英文接收动态反馈 给你一个日志数组 logs。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 标识符 。 有两种不同类型的日志：  字母日志：除标识符之外，所有字均由小写字母组成 数字日志：除标识符之外，所有字均由数字组成  请按下述规则将日志重新排序：  所有 字母日志 都排在 数字日志 之前。 字母日志 在内容不同时，忽略标识符后，按内容字母顺序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="36. 有效的数独">
-<meta property="og:url" content="http://example.com/LeetCode/49/index.html">
+<meta property="og:title" content="937. 重新排列日志文件">
+<meta property="og:url" content="http://example.com/LeetCode/52/index.html">
 <meta property="og:site_name" content="Hi, Cleves">
-<meta property="og:description" content="题目描述难度中等856收藏分享切换为英文接收动态反馈 请你判断一个 9 x 9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。  数字 1-9 在每一行只能出现一次。 数字 1-9 在每一列只能出现一次。 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）  注意：  一个有效的数独（部分已被填充）不一定是可解的。 只需要根据以上规则，验证已">
+<meta property="og:description" content="题目描述难度简单158收藏分享切换为英文接收动态反馈 给你一个日志数组 logs。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 标识符 。 有两种不同类型的日志：  字母日志：除标识符之外，所有字均由小写字母组成 数字日志：除标识符之外，所有字均由数字组成  请按下述规则将日志重新排序：  所有 字母日志 都排在 数字日志 之前。 字母日志 在内容不同时，忽略标识符后，按内容字母顺序">
 <meta property="og:locale">
-<meta property="og:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/04/12/250px-sudoku-by-l2g-20050714svg.png">
-<meta property="article:published_time" content="2022-04-30T22:19:00.000Z">
+<meta property="article:published_time" content="2022-05-03T17:07:00.000Z">
 <meta property="article:modified_time" content="2022-05-03T09:09:05.456Z">
 <meta property="article:author" content="Cleves">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/04/12/250px-sudoku-by-l2g-20050714svg.png">
 
 
 
@@ -165,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/LeetCode/49/"/>
+  <link rel="canonical" href="http://example.com/LeetCode/52/"/>
 
 
 
 
 
-  <title>36. 有效的数独 | Hi, Cleves</title>
+  <title>937. 重新排列日志文件 | Hi, Cleves</title>
   
 
 
@@ -282,7 +280,7 @@
   
   
   
-  <link itemprop="mainEntityOfPage" href="http://example.com/LeetCode/49/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/LeetCode/52/">
 
   
 
@@ -311,7 +309,7 @@
 
       
       
-        <h1 class="post-title" itemprop="name headline">36. 有效的数独</h1>
+        <h1 class="post-title" itemprop="name headline">937. 重新排列日志文件</h1>
       
 
       <div class="post-meta">
@@ -323,8 +321,8 @@
             
               <span class="post-meta-item-text">发表于</span>
             
-            <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-30T22:19:00+00:00">
-              2022-04-30
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-03T17:07:00+00:00">
+              2022-05-03
             </time>
           
 
@@ -350,7 +348,7 @@
                 <span class="post-meta-item-text">字数统计&#58;</span>
               
               <span title="字数统计">
-                699
+                684
               </span>
             
 
@@ -362,7 +360,7 @@
 
         
         
-          <span id="/LeetCode/49/" class="leancloud_visitors" data-flag-title="36. 有效的数独">
+          <span id="/LeetCode/52/" class="leancloud_visitors" data-flag-title="937. 重新排列日志文件">
             <span class="post-meta-item-icon">
               <i class="fa fa-eye"></i>
             </span>
@@ -389,40 +387,36 @@
     
 
     
-      <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>难度中等856收藏分享切换为英文接收动态反馈</p>
-<p>请你判断一个 <code>9 x 9</code> 的数独是否有效。只需要 <strong>根据以下规则</strong> ，验证已经填入的数字是否有效即可。</p>
-<ol>
-<li>数字 <code>1-9</code> 在每一行只能出现一次。</li>
-<li>数字 <code>1-9</code> 在每一列只能出现一次。</li>
-<li>数字 <code>1-9</code> 在每一个以粗实线分隔的 <code>3x3</code> 宫内只能出现一次。（请参考示例图）</li>
-</ol>
-<p><strong>注意：</strong></p>
+      <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>难度简单158收藏分享切换为英文接收动态反馈</p>
+<p>给你一个日志数组 <code>logs</code>。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 <strong>标识符</strong> 。</p>
+<p>有两种不同类型的日志：</p>
 <ul>
-<li>一个有效的数独（部分已被填充）不一定是可解的。</li>
-<li>只需要根据以上规则，验证已经填入的数字是否有效即可。</li>
-<li>空白格用 <code>&#39;.&#39;</code> 表示。</li>
+<li><strong>字母日志</strong>：除标识符之外，所有字均由小写字母组成</li>
+<li><strong>数字日志</strong>：除标识符之外，所有字均由数字组成</li>
 </ul>
+<p>请按下述规则将日志重新排序：</p>
+<ul>
+<li>所有 <strong>字母日志</strong> 都排在 <strong>数字日志</strong> 之前。</li>
+<li><strong>字母日志</strong> 在内容不同时，忽略标识符后，按内容字母顺序排序；在内容相同时，按标识符排序。</li>
+<li><strong>数字日志</strong> 应该保留原来的相对顺序。</li>
+</ul>
+<p>返回日志的最终顺序。</p>
 <p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/04/12/250px-sudoku-by-l2g-20050714svg.png" alt="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2021/04/12/250px-sudoku-by-l2g-20050714svg.png"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入：board =</span><br><span class="line">[[&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;]</span><br><span class="line">,[&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;]</span><br><span class="line">,[&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]]</span><br><span class="line">输出：true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：logs = [&quot;dig1 8 1 5 1&quot;,&quot;let1 art can&quot;,&quot;dig2 3 6&quot;,&quot;let2 own kit dig&quot;,&quot;let3 art zero&quot;]</span><br><span class="line">输出：[&quot;let1 art can&quot;,&quot;let3 art zero&quot;,&quot;let2 own kit dig&quot;,&quot;dig1 8 1 5 1&quot;,&quot;dig2 3 6&quot;]</span><br><span class="line">解释：</span><br><span class="line">字母日志的内容都不同，所以顺序为 &quot;art can&quot;, &quot;art zero&quot;, &quot;own kit dig&quot; 。</span><br><span class="line">数字日志保留原来的相对顺序 &quot;dig1 8 1 5 1&quot;, &quot;dig2 3 6&quot; 。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
 <p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入：board =</span><br><span class="line">[[&quot;8&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;]</span><br><span class="line">,[&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;]</span><br><span class="line">,[&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;]</span><br><span class="line">,[&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]]</span><br><span class="line">输出：false</span><br><span class="line">解释：除了第一行的第一个数字从 5 改为8以外，空格内其他数字均与 示例1 相同。 但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：logs = [&quot;a1 9 2 3 1&quot;,&quot;g1 act car&quot;,&quot;zo4 4 7&quot;,&quot;ab1 off key dog&quot;,&quot;a8 act zoo&quot;]</span><br><span class="line">输出：[&quot;g1 act car&quot;,&quot;a8 act zoo&quot;,&quot;ab1 off key dog&quot;,&quot;a1 9 2 3 1&quot;,&quot;zo4 4 7&quot;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>board.length == 9</code></li>
-<li><code>board[i].length == 9</code></li>
-<li><code>board[i][j]</code> 是一位数字（<code>1-9</code>）或者 <code>&#39;.&#39;</code></li>
+<li><code>1 &lt;= logs.length &lt;= 100</code></li>
+<li><code>3 &lt;= logs[i].length &lt;= 100</code></li>
+<li><code>logs[i]</code> 中，字与字之间都用 <strong>单个</strong> 空格分隔</li>
+<li>题目数据保证 <code>logs[i]</code> 都有一个标识符，并且在标识符之后至少存在一个字</li>
 </ul>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><ul>
-<li>横向遍历校验是否重复</li>
-<li>纵向遍历校验是否重复</li>
-<li>在按每个3*3区域校验是否重复</li>
-</ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">board</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValidSudoku = <span class="function"><span class="keyword">function</span>(<span class="params">board</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> vertical = []</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123; <span class="comment">// 纵向</span></span><br><span class="line">    <span class="keyword">const</span> arr = []</span><br><span class="line">    <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123; <span class="comment">// 横向</span></span><br><span class="line">      <span class="keyword">const</span> bo = board[i][j]</span><br><span class="line">      arr[j] = board[j][i]</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (bo === <span class="string">&#x27;.&#x27;</span> || !map.has(bo)) &#123;</span><br><span class="line">        map.set(bo)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// 横向检查重复数字</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vertical.push(arr);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123; <span class="comment">// 纵向</span></span><br><span class="line">    <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123; <span class="comment">// 横向</span></span><br><span class="line">      <span class="keyword">const</span> bo = vertical[i][j]</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (bo === <span class="string">&#x27;.&#x27;</span> || !map.has(bo)) &#123;</span><br><span class="line">        map.set(bo)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; <span class="comment">// 横向检查重复数字</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> square = [</span><br><span class="line">    [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]], [[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]], [[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]],</span><br><span class="line">    [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]], [[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]], [[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]],</span><br><span class="line">    [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]], [[<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>],[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]], [[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],[<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; square.length; k++) &#123;</span><br><span class="line">    <span class="keyword">const</span> [X, Y] = square[k]</span><br><span class="line">    <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; X.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> x = X[i]</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; Y.length; j++) &#123;</span><br><span class="line">        <span class="keyword">const</span> y = Y[j]</span><br><span class="line">        <span class="keyword">const</span> bo = vertical[x][y]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (bo === <span class="string">&#x27;.&#x27;</span> || !map.has(bo)) &#123;</span><br><span class="line">          map.set(bo)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// 横向检查重复数字</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 找出字母日志、数字日志 ==&gt; isNaN()</span></span><br><span class="line"><span class="comment">// 数字日志按原来的顺序，但是在字母日志之后</span></span><br><span class="line"><span class="comment">// 字母日志需要按字母顺序排序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">logs</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> reorderLogFiles = <span class="function"><span class="keyword">function</span>(<span class="params">logs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> nums = [] <span class="comment">// 保存数字日子</span></span><br><span class="line">  <span class="keyword">const</span> letters = [] <span class="comment">// 保存字母日志</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; logs.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> l = logs[i].split(<span class="string">&#x27; &#x27;</span>)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isNaN</span>(l)) &#123; <span class="comment">// 字母</span></span><br><span class="line">      letters.push(logs[i])</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 数字</span></span><br><span class="line">      nums.push(logs[i])</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 对字母日志进行排序</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; letters.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = letters.length - <span class="number">1</span>; j &gt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">      <span class="keyword">let</span> letftHead = <span class="string">&#x27;&#x27;</span></span><br><span class="line">      <span class="keyword">let</span> letft = <span class="string">&#x27;&#x27;</span></span><br><span class="line">      <span class="keyword">let</span> rightHead = <span class="string">&#x27;&#x27;</span></span><br><span class="line">      <span class="keyword">let</span> right = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; letters[j - <span class="number">1</span>].length; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!letftHead &amp;&amp; letters[j - <span class="number">1</span>][k] === <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">          letftHead = letters[j - <span class="number">1</span>].slice(<span class="number">0</span>, k)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letftHead) &#123;</span><br><span class="line">          letft += letters[j - <span class="number">1</span>][k]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; letters[j].length; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!rightHead &amp;&amp; letters[j][k] === <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">          rightHead = letters[j].slice(<span class="number">0</span>, k)</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (rightHead) &#123;</span><br><span class="line">          right += letters[j][k]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (letft === right) &#123;</span><br><span class="line">        <span class="keyword">if</span> (letftHead &gt; rightHead) &#123;</span><br><span class="line">          [letters[j], letters[j - <span class="number">1</span>]] = [letters[j - <span class="number">1</span>], letters[j]]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (letft &gt; right) &#123;</span><br><span class="line">        [letters[j], letters[j - <span class="number">1</span>]] = [letters[j - <span class="number">1</span>], letters[j]]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> [...letters, ...nums]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     
   </div>
   
@@ -446,8 +440,8 @@
       <div class="post-nav">
         <div class="post-nav-next post-nav-item">
           
-            <a href="/LeetCode/48/" rel="next" title="350. 两个数组的交集 II">
-              <i class="fa fa-chevron-left"></i> 350. 两个数组的交集 II
+            <a href="/LeetCode/51/" rel="next" title="387. 字符串中的第一个唯一字符">
+              <i class="fa fa-chevron-left"></i> 387. 字符串中的第一个唯一字符
             </a>
           
         </div>
@@ -455,10 +449,6 @@
         <span class="post-nav-divider"></span>
 
         <div class="post-nav-prev post-nav-item">
-          
-            <a href="/LeetCode/50/" rel="prev" title="7. 整数反转">
-              7. 整数反转 <i class="fa fa-chevron-right"></i>
-            </a>
           
         </div>
       </div>
@@ -510,9 +500,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://example.com/LeetCode/49/';
-          this.page.identifier = '/LeetCode/49/';
-          this.page.title = '36. 有效的数独';
+          this.page.url = 'http://example.com/LeetCode/52/';
+          this.page.identifier = '/LeetCode/52/';
+          this.page.title = '937. 重新排列日志文件';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Cleves.disqus.com/embed.js';
