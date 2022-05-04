@@ -13,7 +13,7 @@ Hi，我是 Cleves。
 | 元素 | 特征 |
 | ----| ---- |
 | 生日 | 1995-11-19 |
-| 特征 | 喜欢笑 |
+| 特征 | 爱笑男孩（笑点低...） |
 | 一句话 | 爱笑的人，运气都比较差 |
 | 最喜欢的作品 | 未闻花名、濒危物种少女、CLANNAD、鬼灭之刃、咒术回战 |
 | 最喜欢的游戏 | FC合集、原神、塞尔达 |
@@ -46,12 +46,12 @@ Hi，我是 Cleves。
 
 <div class="work-wrap">
   <div class="work-title">
-    PotatoSign&nbsp;
+    PotatoTag&nbsp;
     <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
-    <i class="fa potato-sign"></i>（建设中...）
+    <i class="fa potato-sign"></i>
   </div>
   <div class="work-desc">
-    一个Chrome扩展程序，主要功能是保存网页标签。界面方便操作和管理，方便你建立一个属于自己的导航站点
+    一个浏览器扩展程序，建立一个属于你自己的导航站点
   </div>
 </div>
 
