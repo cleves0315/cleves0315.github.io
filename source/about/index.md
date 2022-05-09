@@ -10,22 +10,23 @@ Hi，我是 Cleves。
 
 ## 构成要素
 
-| 元素 | 特征 |
-| ----| ---- |
-| 生日 | 1995-11-19 |
-| 特征 | 爱笑男孩（笑点低...） |
-| 一句话 | 爱笑的人，运气都比较差 |
+| 元素         | 特征                                                |
+| ------------ | --------------------------------------------------- |
+| 生日         | 1995-11-19                                          |
+| 特征         | 爱笑男孩（笑点低...）                               |
+| 一句话       | 爱笑的人，运气都比较差                              |
 | 最喜欢的作品 | 未闻花名、濒危物种少女、CLANNAD、鬼灭之刃、咒术回战 |
-| 最喜欢的游戏 | FC合集、原神、塞尔达 |
-| 最喜欢的音乐 | 起风了、ヤキモチ、Exile、City Of Stars |
-| 最喜欢的颜色 | 天空蓝 |
-| 最喜欢的食物 | 玉米、板栗 |
+| 最喜欢的游戏 | FC 合集、原神、塞尔达                               |
+| 最喜欢的音乐 | 起风了、ヤキモチ、Exile、City Of Stars              |
+| 最喜欢的颜色 | 天空蓝                                              |
+| 最喜欢的食物 | 玉米、板栗                                          |
 
 ## 作品
+
 <div class="work-wrap">
   <div class="work-title">
     海带与西兰花&nbsp;
-    <a href=""><i class="fa fa-github" style="color: #333;"></i></a>
+    <a href="https://github.com/cleves0315/kelp-and-broccoli"><i class="fa fa-github" style="color: #333;"></i></a>
     <a href="https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/gh_e084921619aa_258.jpg?sign=c19734fbb394c0317577f5047b961767&t=1633508413" target="_blank"><i class="fa broccoli"></i></a>
   </div>
   <div class="work-desc">
@@ -37,7 +38,7 @@ Hi，我是 Cleves。
 <div class="work-wrap">
   <div class="work-title">
     next-sky&nbsp;
-    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+    <a href="https://github.com/cleves0315/cleves0315.github.io"><i class="fa fa-github" style="color: #333;"></i></a>
   </div>
   <div class="work-desc">
     该本博客项目，基于hexo
@@ -47,7 +48,7 @@ Hi，我是 Cleves。
 <div class="work-wrap">
   <div class="work-title">
     PotatoTag&nbsp;
-    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+    <a href="https://github.com/cleves0315/potato-tag"><i class="fa fa-github" style="color: #333;"></i></a>
     <i class="fa potato-sign"></i>
   </div>
   <div class="work-desc">
@@ -56,6 +57,7 @@ Hi，我是 Cleves。
 </div>
 
 ## 抓到我
+
 <ul>
     <li><a class="link" href="https://github.com/cleves0315">Github @Cleves</a></li>
     <li><a class="link" href="https://twitter.com/cleves0315">Twitter @Cleves</a></li>
@@ -63,17 +65,20 @@ Hi，我是 Cleves。
     <li><a class="link" href="https://music.163.com/#/user/home?id=314122865">网易云 @Cleves</a></li>
 </ul>
 
-🎮游戏：
+🎮 游戏：
+
 <ul>
     <li><a class="link" href="https://6272-broccoli-puuzo-1302613116.tcb.qcloud.la/yuanshen.png?sign=b6a6eb5ea064aaa22bb909acf03030fb&t=1633512431">原神 @Cleves</a></li>
 </ul>
 
 ## 历年年终总结
+
 <ul>
     <li><a class="link" href="/archives/25/#more">2021年终总结</a></li>
 </ul>
 
 {% raw %}
+
 <style>
 .post-body thead {
     display: none;
@@ -137,4 +142,5 @@ h2 {
     margin-right: 10px;
 }
 </style>
+
 {% endraw %}

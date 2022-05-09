@@ -25,7 +25,7 @@
 
   <div class="post-badge">
     {% for cat in post.categories %}
-      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+      <span class="post-badge-block" itemprop="about" itemscope itemtype="http://schema.org/Thing">
         <a href="{{ url_for(cat.path) }}" itemprop="url" rel="index">
           <span itemprop="name">{{ cat.name }}</span>
         </a>

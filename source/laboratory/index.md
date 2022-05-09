@@ -19,7 +19,7 @@ type: "laboratory"
 <div class="work-wrap">
   <div class="work-title">
     next-sky&nbsp;
-    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
+    <a href="https://github.com/cleves0315/cleves0315.github.io"><i class="fa fa-github" style="color: #333;"></i></a>
   </div>
   <div class="work-desc">
     该本博客项目，基于hexo
@@ -28,9 +28,9 @@ type: "laboratory"
 
 <div class="work-wrap">
   <div class="work-title">
-    PotatoSign&nbsp;
-    <!-- <a href=""><i class="fa fa-github" style="color: #333;"></i></a> -->
-    <i class="fa potato-sign"></i>（建设中...）
+    PotatoTag&nbsp;
+    <a href="https://github.com/cleves0315/potato-tag"><i class="fa fa-github" style="color: #333;"></i></a>
+    <i class="fa potato-sign"></i>
   </div>
   <div class="work-desc">
     一个Chrome扩展程序，主要功能是保存网页标签。界面方便操作和管理，方便你建立一个属于自己的导航站点
