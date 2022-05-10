@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=1.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=1.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=1.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=1.1.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Cleves" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题目描述难度中等 901 收藏分享切换为英文接收动态反馈 给定一个正整数  n ，输出外观数列的第  n  项。 「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。 你可以将其视作是由递归公式定义的数字字符串序列：  countAndSay(1) &#x3D; &quot;1&quot; countAndSay(n)  是对  countAndSay(n-1)  的描述，然后转">
+<meta property="og:type" content="article">
+<meta property="og:title" content="38. 外观数列">
+<meta property="og:url" content="http://example.com/LeetCode/63/index.html">
+<meta property="og:site_name" content="Hi, Cleves">
+<meta property="og:description" content="题目描述难度中等 901 收藏分享切换为英文接收动态反馈 给定一个正整数  n ，输出外观数列的第  n  项。 「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。 你可以将其视作是由递归公式定义的数字字符串序列：  countAndSay(1) &#x3D; &quot;1&quot; countAndSay(n)  是对  countAndSay(n-1)  的描述，然后转">
+<meta property="og:locale">
+<meta property="og:image" content="https://pic.leetcode-cn.com/1629874763-TGmKUh-image.png">
+<meta property="article:published_time" content="2022-05-10T14:50:00.000Z">
+<meta property="article:modified_time" content="2022-05-10T06:52:32.879Z">
+<meta property="article:author" content="Cleves">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.leetcode-cn.com/1629874763-TGmKUh-image.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    version: '1.1.0',
+    since: '6/26/2021 11:34:00',
+    sidebar: {"position":"right","display":"post","offset":60,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@2.1.3/dist/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+
+
+  <link rel="canonical" href="http://example.com/LeetCode/63/"/>
+
+
+
+
+
+  <title>38. 外观数列 | Hi, Cleves</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-wrapper">
+        <div class="header-inner">
+          
+            <div class="logo-wrapper">
+              <div class="name">Cleves</div>
+              <img class="avatar" src="/images/avatar.png" />
+            </div>
+          <nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            <span class="menu-item-name">首页</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-laboratory">
+          <a href="/laboratory" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br />
+            
+            <span class="menu-item-name">实验室</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            <span class="menu-item-name">归档</span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            <span class="menu-item-name">关于我</span>
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+
+
+
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <main id="main" class="main">
+        
+        <div class="main-inner">
+          <div id="content-wrap" class="content-wrap">
+            <div id="content" class="content">
+              
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <link itemprop="mainEntityOfPage" href="http://example.com/LeetCode/63/">
+
+  
+
+  <div class="post-badge">
+    
+      <span class="post-badge-block" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Leet-Code/" itemprop="url" rel="index">
+          <span itemprop="name">Leet Code</span>
+        </a>
+      </span>
+    
+  </div>
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hi, Cleves">
+  </span>
+
+  
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">38. 外观数列</h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            
+              <span class="post-meta-item-text">发表于</span>
+            
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-10T14:50:00+00:00">
+              2022-05-10
+            </time>
+          
+
+          
+
+          
+        </span>
+
+        
+
+        
+
+        
+
+        
+          <span class="post-wordcount">
+            
+              
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">字数统计&#58;</span>
+              
+              <span title="字数统计">
+                798
+              </span>
+            
+
+            
+
+            
+          </span>
+        
+
+        
+        
+          <span id="/LeetCode/63/" class="leancloud_visitors" data-flag-title="38. 外观数列">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-eye"></i>
+            </span>
+            
+              <span class="post-meta-item-text">被</span>
+            
+              <span class="leancloud-visitors-count"></span>
+              <span class="post-meta-item-text">人看爆</span>
+          </span>
+        
+
+        
+
+      </div>
+    </header>
+  
+
+  
+  
+  
+  <div class="post-body" itemprop="articleBody">
+
+    
+    
+
+    
+      <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>难度中等 901 收藏分享切换为英文接收动态反馈</p>
+<p>给定一个正整数  <code>n</code> ，输出外观数列的第  <code>n</code>  项。</p>
+<p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。</p>
+<p>你可以将其视作是由递归公式定义的数字字符串序列：</p>
+<ul>
+<li><code>countAndSay(1) = &quot;1&quot;</code></li>
+<li><code>countAndSay(n)</code>  是对  <code>countAndSay(n-1)</code>  的描述，然后转换成另一个数字字符串。</li>
+</ul>
+<span id="more"></span>
+
+<p>前五项如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br><span class="line">第一项是数字 1</span><br><span class="line">描述前一项，这个数是1 即 “ 一 个 1 ”，记作&quot;11&quot;</span><br><span class="line">描述前一项，这个数是11 即 “ 二 个 1 ” ，记作&quot;21&quot;</span><br><span class="line">描述前一项，这个数是21 即 “ 一 个 2 + 一 个 1 ” ，记作 &quot;1211&quot;</span><br><span class="line">描述前一项，这个数是1211 即 “ 一 个 1 + 一 个 2 + 二 个 1 ” ，记作 &quot;111221&quot;</span><br></pre></td></tr></table></figure>
+
+<p>要  <strong>描述</strong>  一个数字字符串，首先要将字符串分割为  <strong>最小</strong>  数量的组，每个组都由连续的最多  <strong>相同字符</strong>  组成。然后对于每个组，先描述字符的数量，然后描述字符，形成一个描述组。要将描述转换为数字字符串，先将每组中的字符数量用数字替换，再将所有描述组连接起来。</p>
+<p>例如，数字字符串  <code>&quot;3322251&quot;</code>  的描述如下图：</p>
+<p><img src="https://pic.leetcode-cn.com/1629874763-TGmKUh-image.png" alt="https://pic.leetcode-cn.com/1629874763-TGmKUh-image.png"></p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：&quot;1&quot;</span><br><span class="line">解释：这是一个基本样例。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 4</span><br><span class="line">输出：&quot;1211&quot;</span><br><span class="line">解释：</span><br><span class="line">countAndSay(1) = &quot;1&quot;</span><br><span class="line">countAndSay(2) = 读 &quot;1&quot; = 一 个 1 = &quot;11&quot;</span><br><span class="line">countAndSay(3) = 读 &quot;11&quot; = 二 个 1 = &quot;21&quot;</span><br><span class="line">countAndSay(4) = 读 &quot;21&quot; = 一 个 2 + 一 个 1 = &quot;12&quot; + &quot;11&quot; = &quot;1211&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 30</code></li>
+</ul>
+<h3 id="题解一"><a href="#题解一" class="headerlink" title="题解一"></a>题解一</h3><ul>
+<li>遍历字符串</li>
+<li>寻找连续相同的子字符串，然后输出[子字符串数量][字符]</li>
+<li>例如：’11111’有 5 个相同的 1，输出: ‘51’</li>
+<li>‘34’有 1 个 3 和 1 个 4，输出: ‘1314</li>
+<li>最后默认从’1’字符串开始，以题目输入的数字次数-1 次遍历进行以上逻辑（n=4，遍历 3 次上面逻辑）</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countAndSay = <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">&quot;1&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (--n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> s = <span class="string">&quot;&quot;</span>,</span><br><span class="line">      left = <span class="number">0</span>,</span><br><span class="line">      right = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开启双指针查询相同的子字符串</span></span><br><span class="line">    <span class="keyword">while</span> (right &lt; str.length) &#123;</span><br><span class="line">      <span class="keyword">if</span> (str[right] !== str[left]) &#123;</span><br><span class="line">        <span class="keyword">const</span> count = right - left;</span><br><span class="line">        s += <span class="string">`<span class="subst">$&#123;count&#125;</span><span class="subst">$&#123;str[left]&#125;</span>`</span>;</span><br><span class="line">        left = right;</span><br><span class="line">      &#125;</span><br><span class="line">      right++;</span><br><span class="line">    &#125;</span><br><span class="line">    s += <span class="string">`<span class="subst">$&#123;right - left&#125;</span><span class="subst">$&#123;str[left]&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">    str = s;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解法二-·-费手打表流"><a href="#解法二-·-费手打表流" class="headerlink" title="解法二 · 费手打表流"></a>解法二 · 费手打表流</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countAndSay = <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">    [<span class="number">1</span>, <span class="string">&quot;1&quot;</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="string">&quot;11&quot;</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="string">&quot;21&quot;</span>],</span><br><span class="line">    [<span class="number">4</span>, <span class="string">&quot;1211&quot;</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="string">&quot;111221&quot;</span>],</span><br><span class="line">    [<span class="number">6</span>, <span class="string">&quot;312211&quot;</span>],</span><br><span class="line">    [<span class="number">7</span>, <span class="string">&quot;13112221&quot;</span>],</span><br><span class="line">    [<span class="number">8</span>, <span class="string">&quot;1113213211&quot;</span>],</span><br><span class="line">    [<span class="number">9</span>, <span class="string">&quot;31131211131221&quot;</span>],</span><br><span class="line">    [<span class="number">10</span>, <span class="string">&quot;13211311123113112211&quot;</span>],</span><br><span class="line">    [<span class="number">11</span>, <span class="string">&quot;11131221133112132113212221&quot;</span>],</span><br><span class="line">    [<span class="number">12</span>, <span class="string">&quot;3113112221232112111312211312113211&quot;</span>],</span><br><span class="line">    [<span class="number">13</span>, <span class="string">&quot;1321132132111213122112311311222113111221131221&quot;</span>],</span><br><span class="line">    [<span class="number">14</span>, <span class="string">&quot;11131221131211131231121113112221121321132132211331222113112211&quot;</span>],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">15</span>,</span><br><span class="line">      <span class="string">&quot;311311222113111231131112132112311321322112111312211312111322212311322113212221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">16</span>,</span><br><span class="line">      <span class="string">&quot;132113213221133112132113311211131221121321131211132221123113112221131112311332111213211322211312113211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">17</span>,</span><br><span class="line">      <span class="string">&quot;11131221131211132221232112111312212321123113112221121113122113111231133221121321132132211331121321231231121113122113322113111221131221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">18</span>,</span><br><span class="line">      <span class="string">&quot;31131122211311123113321112131221123113112211121312211213211321322112311311222113311213212322211211131221131211132221232112111312111213111213211231131122212322211331222113112211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">19</span>,</span><br><span class="line">      <span class="string">&quot;1321132132211331121321231231121113112221121321132122311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112311332111213122112311311123112111331121113122112132113213211121332212311322113212221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">20</span>,</span><br><span class="line">      <span class="string">&quot;11131221131211132221232112111312111213111213211231132132211211131221131211221321123113213221123113112221131112311332211211131221131211132211121312211231131112311211232221121321132132211331121321231231121113112221121321133112132112312321123113112221121113122113121113123112112322111213211322211312113211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">21</span>,</span><br><span class="line">      <span class="string">&quot;311311222113111231133211121312211231131112311211133112111312211213211312111322211231131122211311122122111312211213211312111322211213211321322113311213212322211231131122211311123113223112111311222112132113311213211221121332211211131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221131112311311121321122112132231121113122113322113111221131221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">22</span>,</span><br><span class="line">      <span class="string">&quot;132113213221133112132123123112111311222112132113311213211231232112311311222112111312211311123113322112132113213221133122112231131122211211131221131112311332211211131221131211132221232112111312111213322112132113213221133112132113221321123113213221121113122123211211131221222112112322211231131122211311123113321112131221123113111231121113311211131221121321131211132221123113112211121312211231131122211211133112111311222112111312211312111322211213211321322113311213211331121113122122211211132213211231131122212322211331222113112211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">23</span>,</span><br><span class="line">      <span class="string">&quot;111312211312111322212321121113121112131112132112311321322112111312212321121113122112131112131221121321132132211231131122211331121321232221121113122113121113222123112221221321132132211231131122211331121321232221123113112221131112311332111213122112311311123112112322211211131221131211132221232112111312211322111312211213211312111322211231131122111213122112311311221132211221121332211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321223112111311222112132113213221123123211231132132211231131122211311123113322112111312211312111322212321121113122123211231131122113221123113221113122112132113213211121332212311322113212221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">24</span>,</span><br><span class="line">      <span class="string">&quot;3113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112311332111213213211221113122113121113222112132113213221232112111312111213322112132113213221133112132123123112111311222112132113311213211221121332211231131122211311123113321112131221123113112221132231131122211211131221131112311332211213211321223112111311222112132113212221132221222112112322211211131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221133112132123222112111312211312112213211231132132211211131221131211132221121311121312211213211312111322211213211321322113311213212322211231131122211311123113321112131221123113112211121312211213211321222113222112132113223113112221121113122113121113123112112322111213211322211312113211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">25</span>,</span><br><span class="line">      <span class="string">&quot;132113213221133112132123123112111311222112132113311213211231232112311311222112111312211311123113322112132113212231121113112221121321132132211231232112311321322112311311222113111231133221121113122113121113221112131221123113111231121123222112132113213221133112132123123112111312111312212231131122211311123113322112111312211312111322111213122112311311123112112322211211131221131211132221232112111312111213111213211231132132211211131221232112111312212221121123222112132113213221133112132123123112111311222112132113213221132213211321322112311311222113311213212322211211131221131211221321123113213221121113122113121132211332113221122112133221123113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112212211131221121321131211132221123113112221131112311332211211133112111311222112111312211311123113322112111312211312111322212321121113121112133221121321132132211331121321231231121113112221121321132122311211131122211211131221131211322113322112111312211322132113213221123113112221131112311311121321122112132231121113122113322113111221131221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">26</span>,</span><br><span class="line">      <span class="string">&quot;1113122113121113222123211211131211121311121321123113213221121113122123211211131221121311121312211213211321322112311311222113311213212322211211131221131211221321123113213221121113122113121113222112131112131221121321131211132221121321132132211331121321232221123113112221131112311322311211131122211213211331121321122112133221121113122113121113222123211211131211121311121321123113111231131122112213211321322113311213212322211231131122211311123113223112111311222112132113311213211221121332211231131122211311123113321112131221123113111231121113311211131221121321131211132221123113112211121312211231131122113221122112133221121113122113121113222123211211131211121311121321123113213221121113122113121113222113221113122113121113222112132113213221232112111312111213322112311311222113111221221113122112132113121113222112311311222113111221132221231221132221222112112322211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321223112111311222112132113213221123123211231132132211231131122211311123113322112111312211312111322111213122112311311123112112322211213211321322113312211223113112221121113122113111231133221121321132132211331121321232221123123211231132132211231131122211331121321232221123113112221131112311332111213122112311311123112112322211211131221131211132221232112111312111213111213211231132132211211131221131211221321123113213221123113112221131112211322212322211231131122211322111312211312111322211213211321322113311213211331121113122122211211132213211231131122212322211331222113112211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">27</span>,</span><br><span class="line">      <span class="string">&quot;31131122211311123113321112131221123113111231121113311211131221121321131211132221123113112211121312211231131122211211133112111311222112111312211312111322211213211321322123211211131211121332211231131122211311122122111312211213211312111322211231131122211311123113322112111331121113112221121113122113111231133221121113122113121113222123211211131211121332211213211321322113311213211322132112311321322112111312212321121113122122211211232221123113112221131112311332111213122112311311123112111331121113122112132113311213211321222122111312211312111322212321121113121112133221121321132132211331121321132213211231132132211211131221232112111312212221121123222112132113213221133112132123123112111311222112132113311213211231232112311311222112111312211311123113322112132113212231121113112221121321132122211322212221121123222112311311222113111231133211121312211231131112311211133112111312211213211312111322211231131122211311123113322113223113112221131112311332211211131221131211132211121312211231131112311211232221121321132132211331221122311311222112111312211311123113322112132113213221133122211332111213112221133211322112211213322112111312211312111322212321121113121112131112132112311321322112111312212321121113122112131112131221121321132132211231131122211331121321232221121113122113121122132112311321322112111312211312111322211213111213122112132113121113222112132113213221133112132123222112311311222113111231132231121113112221121321133112132112211213322112111312211312111322212311222122132113213221123113112221133112132123222112111312211312111322212321121113121112133221121311121312211213211312111322211213211321322123211211131211121332211213211321322113311213212312311211131122211213211331121321122112133221123113112221131112311332111213122112311311123112111331121113122112132113121113222112311311222113111221221113122112132113121113222112132113213221133122211332111213322112132113213221132231131122211311123113322112111312211312111322212321121113122123211231131122113221123113221113122112132113213211121332212311322113212221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">28</span>,</span><br><span class="line">      <span class="string">&quot;13211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321223112111311222112132113213221123123211231132132211231131122211311123113322112111312211312111322111213122112311311123112112322211213211321322113312211223113112221121113122113111231133221121321132132211331121321232221123123211231132132211231131122211331121321232221123113112221131112311332111213122112311311123112112322211211131221131211132221232112111312211322111312211213211312111322211231131122111213122112311311221132211221121332211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221232112111312211312113211223113112221131112311332111213122112311311123112112322211211131221131211132221232112111312211322111312211213211312111322211231131122111213122112311311221132211221121332211211131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221133112132123222112111312211312112213211231132132211211131221131211322113321132211221121332211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321322113311213212322211322132113213221133112132123222112311311222113111231132231121113112221121321133112132112211213322112111312211312111322212311222122132113213221123113112221133112132123222112111312211312111322212311322123123112111321322123122113222122211211232221123113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112212211131221121321131211132221123113112221131112311332211211133112111311222112111312211311123113322112111312211312111322212321121113121112133221121321132132211331121321132213211231132132211211131221232112111312212221121123222112311311222113111231133211121321321122111312211312111322211213211321322123211211131211121332211231131122211311123113321112131221123113111231121123222112111331121113112221121113122113111231133221121113122113121113221112131221123113111231121123222112111312211312111322212321121113121112131112132112311321322112111312212321121113122122211211232221121321132132211331121321231231121113112221121321133112132112312321123113112221121113122113111231133221121321132132211331221122311311222112111312211311123113322112111312211312111322212311322123123112112322211211131221131211132221132213211321322113311213212322211231131122211311123113321112131221123113112211121312211213211321222113222112132113223113112221121113122113121113123112112322111213211322211312113211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">29</span>,</span><br><span class="line">      <span class="string">&quot;11131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221133112132123222112111312211312112213211231132132211211131221131211132221121311121312211213211312111322211213211321322113311213212322211231131122211311123113223112111311222112132113311213211221121332211211131221131211132221231122212213211321322112311311222113311213212322211211131221131211132221232112111312111213322112131112131221121321131211132221121321132132212321121113121112133221121321132132211331121321231231121113112221121321133112132112211213322112311311222113111231133211121312211231131122211322311311222112111312211311123113322112132113212231121113112221121321132122211322212221121123222112111312211312111322212321121113121112131112132112311321322112111312212321121113122112131112131221121321132132211231131122111213122112311311222113111221131221221321132132211331121321231231121113112221121321133112132112211213322112311311222113111231133211121312211231131122211322311311222112111312211311123113322112132113212231121113112221121321132122211322212221121123222112311311222113111231133211121312211231131112311211133112111312211213211312111322211231131122111213122112311311222112111331121113112221121113122113121113222112132113213221232112111312111213322112311311222113111221221113122112132113121113222112311311222113111221132221231221132221222112112322211211131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221133112132123222112111312211312111322212321121113121112133221132211131221131211132221232112111312111213322112132113213221133112132113221321123113213221121113122123211211131221222112112322211231131122211311123113321112132132112211131221131211132221121321132132212321121113121112133221123113112221131112311332111213211322111213111213211231131211132211121311222113321132211221121332211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321223112111311222112132113213221123123211231132132211231131122211311123113322112111312211312111322111213122112311311123112112322211213211321322113312211223113112221121113122113111231133221121321132132211331121321232221123123211231132132211231131122211331121321232221123113112221131112311332111213122112311311123112112322211211131221131211132221232112111312211322111312211213211312111322211231131122111213122112311311221132211221121332211213211321322113311213212312311211131211131221223113112221131112311332211211131221131211132211121312211231131112311211232221121321132132211331121321231231121113112221121321133112132112211213322112312321123113213221123113112221133112132123222112311311222113111231132231121113112221121321133112132112211213322112311311222113111231133211121312211231131112311211133112111312211213211312111322211231131122111213122112311311221132211221121332211211131221131211132221232112111312111213111213211231132132211211131221232112111312211213111213122112132113213221123113112221133112132123222112111312211312111322212311222122132113213221123113112221133112132123222112311311222113111231133211121321132211121311121321122112133221123113112221131112311332211322111312211312111322212321121113121112133221121321132132211331121321231231121113112221121321132122311211131122211211131221131211322113322112111312211322132113213221123113112221131112311311121321122112132231121113122113322113111221131221&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">    [</span><br><span class="line">      <span class="number">30</span>,</span><br><span class="line">      <span class="string">&quot;3113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112212211131221121321131211132221123113112221131112311332211211133112111311222112111312211311123113322112111312211312111322212321121113121112133221121321132132211331121321132213211231132132211211131221232112111312212221121123222112311311222113111231133211121321321122111312211312111322211213211321322123211211131211121332211231131122211311123113321112131221123113111231121123222112111331121113112221121113122113111231133221121113122113121113221112131221123113111231121123222112111312211312111322212321121113121112131112132112311321322112111312212321121113122122211211232221121321132132211331121321231231121113112221121321132132211322132113213221123113112221133112132123222112111312211312112213211231132132211211131221131211322113321132211221121332211231131122211311123113321112131221123113111231121113311211131221121321131211132221123113112211121312211231131122211211133112111311222112111312211312111322211213211321223112111311222112132113213221133122211311221122111312211312111322212321121113121112131112132112311321322112111312212321121113122122211211232221121321132132211331121321231231121113112221121321132132211322132113213221123113112221133112132123222112111312211312112213211231132132211211131221131211322113321132211221121332211213211321322113311213212312311211131122211213211331121321123123211231131122211211131221131112311332211213211321223112111311222112132113213221123123211231132132211231131122211311123113322112111312211312111322111213122112311311123112112322211213211321322113312211223113112221121113122113111231133221121321132132211331222113321112131122211332113221122112133221123113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112311332111213122112311311123112112322211322311311222113111231133211121312211231131112311211232221121113122113121113222123211211131221132211131221121321131211132221123113112211121312211231131122113221122112133221121321132132211331121321231231121113121113122122311311222113111231133221121113122113121113221112131221123113111231121123222112132113213221133112132123123112111312211322311211133112111312211213211311123113223112111321322123122113222122211211232221121113122113121113222123211211131211121311121321123113213221121113122123211211131221121311121312211213211321322112311311222113311213212322211211131221131211221321123113213221121113122113121113222112131112131221121321131211132221121321132132211331121321232221123113112221131112311322311211131122211213211331121321122112133221121113122113121113222123112221221321132132211231131122211331121321232221121113122113121113222123211211131211121332211213111213122112132113121113222112132113213221232112111312111213322112132113213221133112132123123112111311222112132113311213211221121332211231131122211311123113321112131221123113112221132231131122211211131221131112311332211213211321223112111311222112132113212221132221222112112322211211131221131211132221232112111312111213111213211231131112311311221122132113213221133112132123222112311311222113111231132231121113112221121321133112132112211213322112111312211312111322212321121113121112131112132112311321322112111312212321121113122122211211232221121311121312211213211312111322211213211321322123211211131211121332211213211321322113311213211322132112311321322112111312212321121113122122211211232221121321132132211331121321231231121113112221121321133112132112312321123113112221121113122113111231133221121321132122311211131122211213211321222113222122211211232221123113112221131112311332111213122112311311123112111331121113122112132113121113222112311311221112131221123113112221121113311211131122211211131221131211132221121321132132212321121113121112133221123113112221131112311332111213213211221113122113121113222112132113213221232112111312111213322112132113213221133112132123123112111312211322311211133112111312212221121123222112132113213221133112132123222113223113112221131112311332111213122112311311123112112322211211131221131211132221232112111312111213111213211231132132211211131221131211221321123113213221123113112221131112211322212322211231131122211322111312211312111322211213211321322113311213211331121113122122211211132213211231131122212322211331222113112211&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">  ]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> map.get(n);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+  
+  
+  
+
+  
+
+  
+
+  
+
+  <footer class="post-footer">
+    
+
+    
+    
+    
+
+    
+      <div class="post-nav">
+        <div class="post-nav-next post-nav-item">
+          
+            <a href="/LeetCode/62/" rel="next" title="8. 字符串转换整数 (atoi)">
+              <i class="fa fa-chevron-left"></i> 8. 字符串转换整数 (atoi)
+            </a>
+          
+        </div>
+
+        <span class="post-nav-divider"></span>
+
+        <div class="post-nav-prev post-nav-item">
+          
+        </div>
+      </div>
+    
+
+    
+  </footer>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+            
+
+
+            
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <div id="dsqjs">
+          <section class="dsqjs-info">
+            <p id="dsqjs-load-disqus" class="dsqjs-message">评论加载中<i class="fa fa-commenting-o" aria-hidden="true"></i>...如果长时间无法加载，请针对 disq.us | disquscdn.com | disqus.com 启用代理</p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+  
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://Cleves.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://example.com/LeetCode/63/';
+          this.page.identifier = '/LeetCode/63/';
+          this.page.title = '38. 外观数列';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Cleves.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+          
+            
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <div class="site-author-image-wrap">
+                <img class="site-author-image" itemprop="image"
+                  src="/images/sidebar-card-avatar.png"
+                  alt="" />
+              </div>
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <div class="site-state-title">你能抓到我吗？</div>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://space.bilibili.com/53755614" target="_blank" title="bilibili">
+                    
+                       <i style="fill: #20B0E3;"><svg width="30" height="30" t="1581180571735" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1122"><path d="M813.2864 234.5216h-53.0176l46.3872-46.3872c19.8912-19.8912 19.8912-59.648 0-79.5136s-59.648-19.8912-79.5136 0l-132.5312 125.9008h-159.0272l-132.5312-125.9008c-19.8912-19.8912-59.648-19.8912-79.5136 0s-19.8912 59.648 0 79.5136l46.3872 46.3872H216.9088c-92.7744 0-165.6576 72.8832-165.6576 165.6576v357.8112c0 99.4048 72.8832 172.288 165.6576 172.288h589.7216c92.7744 0 165.6576-72.8832 165.6576-165.6576V400.1792c6.6304-92.7744-66.2528-165.6576-159.0272-165.6576z m46.3872 523.4688a59.392 59.392 0 0 1-59.648 59.648H223.5392a59.392 59.392 0 0 1-59.648-59.648V406.8096a59.392 59.392 0 0 1 59.648-59.648h576.4864a59.392 59.392 0 0 1 59.648 59.648v351.1808z m-516.864-291.5328a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z m344.576 0a59.392 59.392 0 0 0-59.648 59.648v59.648c0 33.1264 26.496 59.648 59.648 59.648s59.648-26.496 59.648-59.648v-59.648a59.392 59.392 0 0 0-59.648-59.648z" p-id="1123"></path></svg></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/cleves0315" target="_blank" title="GitHub">
+                    
+                       <i class="fa fa-github" style="color: #191717; font-size: 30px;"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://music.163.com/#/user/home?id=314122865" target="_blank" title="网易云">
+                    
+                       <svg width="30" height="30" t="1633272252165" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2449" width="200" height="200"><path d="M339.5999999 32.00000001h344.80000003C792.00000004 32.00000001 832.00000003 43.20000002 869.19999995 64.00000003A218.00000015 218.00000015 0 0 1 959.99999997 154.80000005c20.80000001 37.20000002 31.99999996 77.20000012 32.00000002 184.80000002v344.79999986c0 106.79999999-11.19999999 145.60000002-32.00000002 184.80000019A218.00000015 218.00000015 0 0 1 869.19999995 959.99999997c-40.00000007 20.80000001-77.99999993 31.99999996-184.80000002 32.00000002h-344.79999986C231.99999996 991.99999999 191.99999997 980.79999998 154.80000005 959.99999997A218.00000015 218.00000015 0 0 1 64.00000003 869.19999995C43.20000002 832.00000003 32.00000001 792.00000004 32.00000001 684.4000001v-344.80000003C32.00000001 231.99999996 43.20000002 191.99999997 64.00000003 154.80000005A218.00000015 218.00000015 0 0 1 154.80000005 64.00000003C191.99999997 43.20000002 231.99999996 32.00000001 339.5999999 32.00000001z" fill="#d81e06" p-id="2450"></path><path d="M654 155.59999994a167.20000015 167.20000015 0 0 1 62.79999998 30.39999995 46.8 46.8 0 0 1 15.99999991 19.60000013 40.00000007 40.00000007 0 0 1-3.60000002 37.20000001 40.00000007 40.00000007 0 0 1-54.79999986 12.39999998c-4.4-2.80000004-7.59999987-6.80000004-11.99999995-9.19999997a72.39999995 72.39999995 0 0 0-40.00000003-13.20000004 40.00000007 40.00000007 0 0 0-25.60000002 13.20000004 28.4 28.4 0 0 0-7.60000007 25.60000008l14.80000003 55.59999989a214.40000001 214.40000001 0 0 1 100.80000003 29.60000001 287.6000001 287.6000001 0 0 1 77.19999999 69.19999997 240 240 0 0 1 40.00000018 79.99999984A265.99999996 265.99999996 0 0 1 832.00000003 598.40000004a293.60000011 293.60000011 0 0 1-16.00000002 76.79999997 300.79999999 300.79999999 0 0 1-120.00000002 147.20000002 320.00000003 320.00000003 0 0 1-132.39999988 46.39999991 331.19999998 331.19999998 0 0 1-97.20000009 0 320.00000003 320.00000003 0 0 1-175.19999991-92.80000007 344.00000005 344.00000005 0 0 1-90.80000011-317.19999999 337.60000001 337.60000001 0 0 1 202.40000001-239.99999975 53.59999988 53.59999988 0 0 1 44.79999999 2.39999987A40.00000007 40.00000007 0 0 1 464.00000001 258.80000011a40.00000007 40.00000007 0 0 1-25.60000002 32.79999983 257.59999994 257.59999994 0 0 0-163.59999999 206.40000005 262.40000011 262.40000011 0 0 0 14.39999999 127.19999998 258.4 258.4 0 0 0 119.99999999 138.39999999A234.00000003 234.00000003 0 0 0 518.4 789.99999996a272.80000013 272.80000013 0 0 0 91.60000007-16.40000009 217.19999987 217.19999987 0 0 0 118.39999986-101.59999982 177.60000011 177.60000011 0 0 0 15.20000008-35.99999989 199.99999989 199.99999989 0 0 0 0-111.20000017 168.79999985 168.79999985 0 0 0-50.79999991-77.99999989A222.40000002 222.40000002 0 0 0 659.20000018 422.40000001a128.39999999 128.39999999 0 0 0-33.6000002-12.80000002c7.99999999 31.99999996 16.8 63.99999987 25.20000003 96.40000016l3.99999998 23.19999967a136.39999998 136.39999998 0 0 1-109.99999999 138.40000019 130.79999977 130.79999977 0 0 1-96.00000001-17.99999999 144.4 144.4 0 0 1-56.8-73.59999999 174.79999995 174.79999995 0 0 1-9.59999986-52.40000013 180.8000001 180.8000001 0 0 1 30.40000004-110.39999989 199.99999989 199.99999989 0 0 1 111.19999982-76.8l-9.60000004-37.20000004a110.39999998 110.39999998 0 0 1 6.00000018-80.0000001 115.59999997 115.59999997 0 0 1 28.79999989-36.39999988A117.59999999 117.59999999 0 0 1 591.99999998 156.39999994a120.00000001 120.00000001 0 0 1 62.00000002-0.79999983z" fill="#ffffff" p-id="2451"></path><path d="M488.79999995 447.6a93.60000012 93.60000012 0 0 0-23.59999995 44.80000004 120.00000001 120.00000001 0 0 0 0 46.39999994 69.2 69.2 0 0 0 26.4 43.19999988 50.80000013 50.80000013 0 0 0 40.00000001 7.60000029A55.99999999 55.99999999 0 0 0 576.79999989 537.60000014a144 144 0 0 0-3.59999987-18.40000021L545.60000004 414.79999999a127.60000001 127.60000001 0 0 0-56.80000009 32.80000001z" fill="#d81e06" p-id="2452"></path></svg></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/cleves0315" target="_blank" title="Twitter">
+                    
+                       <i class="fa fa-twitter" style="color: #2FB0EC; font-size: 30px;"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%E4%B8%80"><span class="nav-number">2.</span> <span class="nav-text">题解一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C-%C2%B7-%E8%B4%B9%E6%89%8B%E6%89%93%E8%A1%A8%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">解法二 · 费手打表流</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <footer id="footer" class="footer">
+          <div class="footer-inner">
+            <div class="run-time">该博客已经运行了<span id="since"></span></div>
+
+<div class="copyright">&copy;<span itemprop="copyrightYear">2022</span>
+  <span class="author" itemprop="copyrightHolder">Hi, Cleves.</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动.</div>
+
+
+<div>Theme By <a class="theme-link" href="https://github.com/cleves0315/cleves0315.github.io" target="_blank" class="external" rel="nofollow">Sky</a> v1.1.0.</div>
+<div>Made with <i class="fa fa-heart" style="color: #d43f57;"></i> by <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/cleves0315">Cleves</a>.</div>
+
+            
+
+
+
+
+
+
+
+            
+          </div>
+        </footer>
+      
+
+      
+
+    </div>
+    
+  </aside>
+
+
+          
+        </div>
+      </main>
+
+      
+
+      
+        <div class="back-to-top">
+          <img src="https://cdn.jsdelivr.net/gh/DIYgod/hexo-theme-sagiri/source/images/scroll.png">
+          
+        </div>
+      
+
+      
+      
+    </div>
+
+  </div>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=1.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=1.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=1.1.0"></script>
+
+  <script type="text/javascript" src="/js/sky.js?v=1.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=1.1.0"></script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="//cdn1.lncld.net/static/js/3.3.1/av-min.js"></script>
+  <script>AV.initialize("5sTAnPxuLGAauoJb8i7oMRFf-9Nh9j0Va", "FfW13xNPVMHEfLmSQ9FNesFQ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .then(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find()
+        .then(function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save()
+              .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              })
+              .then(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save()
+              .then(function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              })
+              .then(function(newcounter, error) {
+                console.log('Failed to create');
+              });
+          }
+        });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
