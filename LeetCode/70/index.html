@@ -78,20 +78,17 @@
 
 
 
-<meta name="description" content="题目描述难度简单1912收藏分享切换为英文接收动态反馈 给你一个二叉树的根节点 root ， 检查它是否轴对称。 示例 1：  123输入：root &#x3D; [1,2,2,3,4,4,3]输出：true">
+<meta name="description" content="题目描述难度简单197收藏分享切换为英文接收动态反馈 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。 给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="101. 对称二叉树">
-<meta property="og:url" content="http://example.com/LeetCode/68/index.html">
+<meta property="og:title" content="953. 验证外星语词典">
+<meta property="og:url" content="http://example.com/LeetCode/70/index.html">
 <meta property="og:site_name" content="Hi, Cleves">
-<meta property="og:description" content="题目描述难度简单1912收藏分享切换为英文接收动态反馈 给你一个二叉树的根节点 root ， 检查它是否轴对称。 示例 1：  123输入：root &#x3D; [1,2,2,3,4,4,3]输出：true">
+<meta property="og:description" content="题目描述难度简单197收藏分享切换为英文接收动态反馈 某种外星语也使用英文小写字母，但可能顺序 order 不同。字母表的顺序（order）是一些小写字母的排列。 给定一组用外星语书写的单词 words，以及其字母表的顺序 order，只有当给定的单词在这种外星语中按字典序排列时，返回 true；否则，返回 false。">
 <meta property="og:locale">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg">
-<meta property="article:published_time" content="2022-05-15T19:21:00.000Z">
+<meta property="article:published_time" content="2022-05-17T07:21:00.000Z">
 <meta property="article:modified_time" content="2022-05-17T15:49:49.087Z">
 <meta property="article:author" content="Cleves">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg">
 
 
 
@@ -166,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/LeetCode/68/"/>
+  <link rel="canonical" href="http://example.com/LeetCode/70/"/>
 
 
 
 
 
-  <title>101. 对称二叉树 | Hi, Cleves</title>
+  <title>953. 验证外星语词典 | Hi, Cleves</title>
   
 
 
@@ -283,7 +280,7 @@
   
   
   
-  <link itemprop="mainEntityOfPage" href="http://example.com/LeetCode/68/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/LeetCode/70/">
 
   
 
@@ -312,7 +309,7 @@
 
       
       
-        <h1 class="post-title" itemprop="name headline">101. 对称二叉树</h1>
+        <h1 class="post-title" itemprop="name headline">953. 验证外星语词典</h1>
       
 
       <div class="post-meta">
@@ -324,8 +321,8 @@
             
               <span class="post-meta-item-text">发表于</span>
             
-            <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-15T19:21:00+00:00">
-              2022-05-15
+            <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-17T07:21:00+00:00">
+              2022-05-17
             </time>
           
 
@@ -351,7 +348,7 @@
                 <span class="post-meta-item-text">字数统计&#58;</span>
               
               <span title="字数统计">
-                220
+                552
               </span>
             
 
@@ -363,7 +360,7 @@
 
         
         
-          <span id="/LeetCode/68/" class="leancloud_visitors" data-flag-title="101. 对称二叉树">
+          <span id="/LeetCode/70/" class="leancloud_visitors" data-flag-title="953. 验证外星语词典">
             <span class="post-meta-item-icon">
               <i class="fa fa-eye"></i>
             </span>
@@ -390,25 +387,32 @@
     
 
     
-      <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>难度简单1912收藏分享切换为英文接收动态反馈</p>
-<p>给你一个二叉树的根节点 <code>root</code> ， 检查它是否轴对称。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" alt="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [1,2,2,3,4,4,3]</span><br><span class="line">输出：true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+      <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>难度简单197收藏分享切换为英文接收动态反馈</p>
+<p>某种外星语也使用英文小写字母，但可能顺序 <code>order</code> 不同。字母表的顺序（<code>order</code>）是一些小写字母的排列。</p>
+<p>给定一组用外星语书写的单词 <code>words</code>，以及其字母表的顺序 <code>order</code>，只有当给定的单词在这种外星语中按字典序排列时，返回 <code>true</code>；否则，返回 <code>false</code>。</p>
 <span id="more"></span>
 
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;hello&quot;,&quot;leetcode&quot;], order = &quot;hlabcdefgijkmnopqrstuvwxyz&quot;</span><br><span class="line">输出：true</span><br><span class="line">解释：在该语言的字母表中，&#x27;h&#x27; 位于 &#x27;l&#x27; 之前，所以单词序列是按字典序排列的。</span><br></pre></td></tr></table></figure>
+
 <p><strong>示例 2：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" alt="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [1,2,2,null,3,null,3]</span><br><span class="line">输出：false</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;word&quot;,&quot;world&quot;,&quot;row&quot;], order = &quot;worldabcefghijkmnpqstuvxyz&quot;</span><br><span class="line">输出：false</span><br><span class="line">解释：在该语言的字母表中，&#x27;d&#x27; 位于 &#x27;l&#x27; 之后，那么 words[0] &gt; words[1]，因此单词序列不是按字典序排列的。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：words = [&quot;apple&quot;,&quot;app&quot;], order = &quot;abcdefghijklmnopqrstuvwxyz&quot;</span><br><span class="line">输出：false</span><br><span class="line">解释：当前三个字符 &quot;app&quot; 匹配时，第二个字符串相对短一些，然后根据词典编纂规则 &quot;apple&quot; &gt; &quot;app&quot;，因为 &#x27;l&#x27; &gt; &#x27;∅&#x27;，其中 &#x27;∅&#x27; 是空白字符，定义为比任何其他字符都小（更多信息）。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li>树中节点数目在范围 <code>[1, 1000]</code> 内</li>
-<li><code>100 &lt;= Node.val &lt;= 100</code></li>
+<li><code>1 &lt;= words.length &lt;= 100</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 20</code></li>
+<li><code>order.length == 26</code></li>
+<li>在 <code>words[i]</code> 和 <code>order</code> 中的所有字符都是英文小写字母。</li>
 </ul>
-<p><strong>进阶：</strong> 你可以运用递归和迭代两种方法解决这个问题吗？</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isSymmetric = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> check = <span class="function">(<span class="params">left, right</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!left &amp;&amp; !right) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    <span class="keyword">if</span> (!left || !right) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> left.val === right.val &amp;&amp; check(left.left, right.right) &amp;&amp; check(left.right, right.left)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> check(root.left, root.right)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><ul>
+<li>遍历一遍 order，索引出每个单词对应的排序位置。如：’cdea’ =&gt; {‘c’: 0, ‘d’: 1}</li>
+<li>遍历words, 就能知道每个word的每个字符在 order 里的排序位置。然后用 currWord 和 nextWord 比较，如果 currWord 排序靠后面则 false</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">words</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">order</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isAlienSorted = <span class="function"><span class="keyword">function</span>(<span class="params">words, order</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 映射出单词的排序索引</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; order.length; i++) &#123;</span><br><span class="line">    map[order[i]] = i</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; words.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> j = <span class="number">0</span>, valid = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">const</span> ord = words[i]</span><br><span class="line">    <span class="keyword">const</span> nextOrd = words[i+<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 映射出每个字母在 order 的排序位置</span></span><br><span class="line">    <span class="keyword">while</span> (j &lt; ord.length &amp;&amp; j &lt; nextOrd.length) &#123;</span><br><span class="line">      <span class="keyword">const</span> word = map[ord[j]]</span><br><span class="line">      <span class="keyword">const</span> nextWord = map[nextOrd[j]]</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (word &lt; nextWord) &#123;</span><br><span class="line">        valid = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (word &gt; nextWord) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      <span class="keyword">if</span> (word === nextWord) j++</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!valid &amp;&amp; ord.length &gt; nextOrd.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     
   </div>
   
@@ -432,8 +436,8 @@
       <div class="post-nav">
         <div class="post-nav-next post-nav-item">
           
-            <a href="/LeetCode/67/" rel="next" title="102. 二叉树的层序遍历">
-              <i class="fa fa-chevron-left"></i> 102. 二叉树的层序遍历
+            <a href="/LeetCode/69/" rel="next" title="面试题 04.06. 后继者">
+              <i class="fa fa-chevron-left"></i> 面试题 04.06. 后继者
             </a>
           
         </div>
@@ -442,8 +446,8 @@
 
         <div class="post-nav-prev post-nav-item">
           
-            <a href="/LeetCode/69/" rel="prev" title="面试题 04.06. 后继者">
-              面试题 04.06. 后继者 <i class="fa fa-chevron-right"></i>
+            <a href="/LeetCode/71/" rel="prev" title="108. 将有序数组转换为二叉搜索树">
+              108. 将有序数组转换为二叉搜索树 <i class="fa fa-chevron-right"></i>
             </a>
           
         </div>
@@ -496,9 +500,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://example.com/LeetCode/68/';
-          this.page.identifier = '/LeetCode/68/';
-          this.page.title = '101. 对称二叉树';
+          this.page.url = 'http://example.com/LeetCode/70/';
+          this.page.identifier = '/LeetCode/70/';
+          this.page.title = '953. 验证外星语词典';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Cleves.disqus.com/embed.js';
